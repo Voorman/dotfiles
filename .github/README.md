@@ -59,7 +59,7 @@ This is important, because as a developer, we usually have multiple machines (wo
 
 ### XDG Directories
 
-The location of config files can usually be defined using the [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec), which is honored by most apps. This lets you specify where config, log, cache and data files are stored, keeping your top-level home directory free from clutter. You can do this by setting environmental variables, usually within the [`.zshenv`](https://github.com/Voorman/dotfiles/blob/master/config/zsh.zshenv) file.
+The location of config files can usually be defined using the [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec), which is honored by most apps. This lets you specify where config, log, cache and data files are stored, keeping your top-level home directory free from clutter. You can do this by setting environmental variables, usually within the [`.zshenv`](https://github.com/Voorman/dotfiles/blob/master/config/zsh/.zshenv) file.
 
 For example, in my setup I've [set these variables](https://github.com/Voorman/dotfiles/blob/e839ab2d77f0be0d09b4f4ba3503c8b69ad925f3/config/zsh/.zshenv#L6=L10) to:
 

@@ -2,7 +2,6 @@
 ######################################################################
 # ZSH aliases and helper functions for working with Git              #
 #                                                                    #
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> #
 ######################################################################
 
 # Basics

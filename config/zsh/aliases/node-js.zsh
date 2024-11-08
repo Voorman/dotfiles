@@ -2,7 +2,6 @@
 # ZSH aliases and helper functions for Node.js / web development     #
 # Includes aliases for yarn, npn, nvm, npx, node, react, etc         #
 #                                                                    #
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> #
 ######################################################################
 
 # Yarn - Project commands

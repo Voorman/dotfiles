@@ -18,7 +18,6 @@
 #                                                                    #
 # IMPORTANT: Before running, read through everything very carefully! #
 #                                                                    #
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> #
 ######################################################################
 
 # Set variables for reference
@@ -76,7 +75,7 @@ make_banner () {
 
 # Explain to the user what changes will be made
 make_intro () {
-  C2="\033[0;35m"
+  C2="\033[0;34m"
   C3="\x1b[2m"
   echo -e "${CYAN_B}The seup script will do the following:${RESET}\n"\
   "${C2}(1) Pre-Setup Tasls\n"\
@@ -103,8 +102,8 @@ make_intro () {
   "  ${C3}- Refresh current terminal session\n"\
   "  ${C3}- Print summary of applied changes and time taken\n"\
   "  ${C3}- Exit with appropriate status code\n\n"\
-  "${PURPLE}You will be prompted at each stage, before any changes are made.${RESET}\n"\
-  "${PURPLE}For more info, see GitHub: \033[4;35mhttps://github.com/${REPO_NAME}${RESET}"
+  "${PLAIN_B}You will be prompted at each stage, before any changes are made.${RESET}\n"\
+  "${PLAIN_B}For more info, see GitHub: \033[0;34mttps://github.com/${REPO_NAME}${RESET}"
 }
 
 # Cleanup tasks, run when the script exits

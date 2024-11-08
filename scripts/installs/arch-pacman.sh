@@ -11,7 +11,6 @@
 # Be sure to delete / comment out anything you do not need     #
 # For more info, see: https://wiki.archlinux.org/title/Pacman  #
 ################################################################
-# MIT Licensed (C) Alicia Sykes 2022 <https://aliciasykes.com> #
 ################################################################
 
 # Apps to be installed via Pacman

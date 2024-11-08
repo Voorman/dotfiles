@@ -4,8 +4,6 @@
 # Useful for marking the end of a task in your bash log
 # Inspired by @LuRsT's script of the same name
 # Can be called directly, or source'd in *rc file
-# Licensed under MIT, (C) Alicia Sykes 2022
-
 # Determine width of terminal
 hr_col_count="$(tput cols)"
 if [ ! -n "${hr_col_count+set}" ] || [ $hr_col_count -lt 1 ]; then

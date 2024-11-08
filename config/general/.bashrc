@@ -5,8 +5,6 @@
 # I don't much use Bash me, prefer ZSH of Fish...                     #
 # When that's not availible, let's at least make things look half ok  #
 #######################################################################
-# Originated from: https://github.com/Voorman/minimal-terminal-prompt #
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com>  #
 #######################################################################
 
 ## Define all the colors

@@ -7,7 +7,6 @@
 # After editing, re-source .zshrc for new changes to take effect     #
 # For docs and more info, see: https://github.com/Voorman/dotfiles   #
 ######################################################################
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> #
 ######################################################################
 
 # Directory for all-things ZSH config
@@ -118,4 +117,4 @@ if [[ "${SHLVL}" -lt 2 ]] && \
 fi
 
 # bun completions
-[ -s "/home/alicia/.bun/_bun" ] && source "/home/alicia/.bun/_bun"
+[ -s "/home/ivarvoorman/.bun/_bun" ] && source "/home/ivarvoorman/.bun/_bun"

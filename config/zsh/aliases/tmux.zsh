@@ -1,6 +1,5 @@
 ######################################################################
 # ZSH aliases and helper functions for Tmux and common Tmux tasks    #
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> #
 ######################################################################
 
 # Tmux shortcuts

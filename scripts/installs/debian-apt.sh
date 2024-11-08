@@ -11,7 +11,6 @@
 # Be sure to delete / comment out anything you do not need     #
 # For more info, see: https://wiki.debian.org/Apt              #
 ################################################################
-# MIT Licensed (C) Alicia Sykes 2023 <https://aliciasykes.com> #
 ################################################################
 
 # Apps to be installed via apt-get

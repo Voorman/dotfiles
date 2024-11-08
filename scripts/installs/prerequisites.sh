@@ -9,8 +9,6 @@
 # For docs and more info, see: https://github.com/Voorman/dotfiles   #
 # IMPORTANT: Before running, read through everything very carefully! #
 ######################################################################
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> #
-######################################################################
 
 # List of apps to install
 core_packages=(

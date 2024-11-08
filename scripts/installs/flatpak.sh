@@ -18,8 +18,6 @@
 # IMPORTANT: Be sure to remove / comment any apps you do not want!   #
 # For docs and more info, see: https://github.com/Voorman/dotfiles   #
 ######################################################################
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> #
-######################################################################
 
 # Remote origin to use for installations
 flatpak_origin='flathub'

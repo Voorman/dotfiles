@@ -4,7 +4,7 @@ LABEL maintainer "Ivar Voorman"
 LABEL org.opencontainers.image.source https://github.com/Voorman/dotfiles
 
 # Parameters
-ARG user=alicia
+ARG user=ivarvoorman
 ARG group=wheel
 ARG uid=1000
 ARG dotfiles=dotfiles.git

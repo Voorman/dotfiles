@@ -6,7 +6,6 @@
 # Data fetched from wttr.in provided by @chubin                      #
 # This script is inspired by @alexanderepstein                       #
 #                                                                    #
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> #
 ######################################################################
 
 scriptVersion="0.9.1"

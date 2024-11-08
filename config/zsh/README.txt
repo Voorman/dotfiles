@@ -32,5 +32,4 @@ config/zsh/
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃ Full source and documentation: https://github.com/Voorman/dotfiles ┃
-┃ Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛

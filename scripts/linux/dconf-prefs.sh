@@ -8,8 +8,6 @@
 # Creates a backup of current settings, then loads + saves new config  #
 # IMPORTANT: Be sure to read files thoroughly before executing!        #
 ########################################################################
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com>   #
-########################################################################
 
 # Color variables
 PRIMARY_COLOR='\033[1;34m'

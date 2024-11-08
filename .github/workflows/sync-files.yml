@@ -19,7 +19,7 @@ jobs:
           GH_INSTALLATION_TOKEN: ${{ secrets.BOT_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
           CONFIG_PATH: .github/sync.yml
           GIT_USERNAME: liss-bot
-          GIT_EMAIL: alicia-gh-bot@mail.as93.net
+          GIT_EMAIL: ivar@voorman.eu
           ASSIGNEES: Voorman
           REVIEWERS: Voorman
           PR_BODY: |

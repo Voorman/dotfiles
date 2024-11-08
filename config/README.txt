@@ -11,7 +11,6 @@ And always make a backup of your pre-existing config files before over-writing t
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃ Source: https://github.com/Voorman/dotfiles/tree/master/scripts    ┃
-┃ Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 ---

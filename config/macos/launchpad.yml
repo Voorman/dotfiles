@@ -6,7 +6,6 @@
 # To regenerate this file from current layout, run `lporg save`      #
 # To apply changes, run `lporg load ~/.config/launchpad.yml`         #
 #                                                                    #
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> #
 ######################################################################
 
 apps:
@@ -18,7 +17,6 @@ apps:
       - number: 1
         items:
         - Xcode
-        - Android Studio
         - Docker
         - Postman
         - Boop

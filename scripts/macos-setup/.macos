@@ -5,8 +5,6 @@
 # Will use local files if available, otherwise run directly from git   #
 # IMPORTANT: Be sure to read files through thoughouly before executing #
 ########################################################################
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com>   #
-########################################################################
 
 macos_scripts=(
   "macos-security.sh"     # Applies security settings

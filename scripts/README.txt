@@ -26,5 +26,4 @@ A set of Bash scripts for automating the setup and management of various systems
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃ Source: https://github.com/Voorman/dotfiles/tree/master/scripts    ┃
-┃ Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛

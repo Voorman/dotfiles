@@ -3,7 +3,6 @@
 # Helper functions for easily uploading file(s) or directory to transfer.sh
 # To use a self-hosted instance, define the FILE_TRANSFER_SERVICE env var
 # Can be either source'd then call`transfer` function, or invoked directly
-# Licensed under MIT, (C) Alicia Sykes 2022: https://aliciasykes.com
 
 # Once upload is complete, checks response is correct and prints to console
 output_secret_link() {

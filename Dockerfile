@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-LABEL maintainer "Alicia Sykes <https://aliciasykes.com>"
+LABEL maintainer "Ivar Voorman"
 LABEL org.opencontainers.image.source https://github.com/Voorman/dotfiles
 
 # Parameters
@@ -22,7 +22,7 @@ RUN \
   autoconf \
   automake \
   libtool \
-  nasm \
+  nasm \ 
   ncurses \
   ca-certificates \
   libressl \

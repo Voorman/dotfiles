@@ -11,8 +11,6 @@
 # - DOTFILES_REPO - Optionally sets the source repo to be cloned     #
 # - DOTFILES_DIR - Optionally sets the local destination directory   #
 ######################################################################
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> #
-######################################################################
 
 # If not already set, specify dotfiles destination directory and source repo
 DOTFILES_DIR="${DOTFILES_DIR:-$HOME/Documents/config/dotfiles}"

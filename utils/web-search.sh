@@ -8,7 +8,6 @@
 # -Either source this file, or run directly  #
 # -Run with --help for full list of options  #
 #                                            #
-# Licensed under MIT, (C) Alicia Sykes 2022  #
 ##############################################
 
 # URL encodes the users search string

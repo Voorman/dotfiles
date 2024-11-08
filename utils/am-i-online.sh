@@ -2,7 +2,6 @@
 
 # A quick utility for checking if you're online
 # Checks interfaces, gateway, DNS, conntectivity
-# Licensed under MIT, (C) Alicia Sykes 2022
 
 # Colors and re-used string components
 pre_general='\033[1;96m'

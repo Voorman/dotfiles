@@ -12,7 +12,6 @@
 #   --skip-intro - Skip the warning and intro section                        #
 #   --yes-to-all - Don't prompt user to agree to changes                     #
 #                                                                            #
-# Licensed under MIT -  (C) Alicia Sykes 2022 <https://aliciasykes.com>      #
 ##############################################################################
 
 ############################################################
@@ -114,8 +113,8 @@ function log_section () {
 
 echo -e "\n${PRIMARY_COLOR}Starting...${RESET_COLOR}"
 
-# Vzariables for system preferences
-COMPUTER_NAME="AS-AND-MacBook"
+# Variables for system preferences
+COMPUTER_NAME="IVO-MacBook"
 HIGHLIGHT_COLOR="0 0.8 0.7"
 
 # Quit System Preferences before starting
@@ -151,10 +150,10 @@ log_msg "Set language to English"
 defaults write NSGlobalDomain AppleLanguages -array "en"
 
 log_msg "Set locale to British"
-defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=GBP"
+defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EU"
 
-log_msg "Set time zone to London"
-sudo systemsetup -settimezone "Europe/London" > /dev/null
+log_msg "Set time zone to Amsterdam"
+sudo systemsetup -settimezone "Europe/Amsterdam" > /dev/null
 
 log_msg "Set units to metric"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"

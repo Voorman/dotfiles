@@ -7,7 +7,6 @@
 # Intended for use as a MOTD, for when using multiple systems        #
 # For docs and more info, see: https://github.com/Voorman/dotfiles   #
 #                                                                    #
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> #
 ######################################################################
 
 # Formatting variables

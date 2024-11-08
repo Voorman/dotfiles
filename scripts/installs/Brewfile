@@ -8,7 +8,6 @@
 # Source GH repository: https://github.com/Voorman/Brewfile #
 # See brew docs for more info: https://docs.brew.sh/Manpage #
 #                                                           #
-# License: MIT © Alicia Sykes 2022 <https://aliciasykes.com>#
 #############################################################
 
 # Options
@@ -24,6 +23,10 @@ tap 'espanso/espanso'
 tap 'jesseduffield/lazygit'
 tap 'koekeishiya/formulae'
 tap 'kdash-rs/kdash'
+
+tap 'aws/tap'
+tap 'ellie/atuin'
+tap 'microsoft/git'
 
 #############################################################
 # Command Line                                              #
@@ -114,7 +117,7 @@ brew 'pv'           # Pipe viewer, with animation options
 #############################################################
 
 # Development Apps
-cask 'android-studio' # IDE for Android development
+# cask 'android-studio' # IDE for Android development
 cask 'boop'           # Text transformation tool
 brew 'gradle'         # Build automation for Java
 cask 'iterm2'         # Better terminal emulator
@@ -125,17 +128,17 @@ cask 'visual-studio-code' # Code editor
 # Development Langs, Compilers, Package Managers and SDKs
 brew 'gcc'            # GNU C++ compilers
 brew 'go'             # Compiler for Go Lang
-brew 'lua'            # Lua interpreter
-brew 'luarocks'       # Package manager for Lua
+# brew 'lua'            # Lua interpreter
+# brew 'luarocks'       # Package manager for Lua
 brew 'node'           # Node.js
 brew 'nvm'            # Switching node versions
 brew 'openjdk'        # Java development kit
 brew 'python'         # Python interpreter
-brew 'rust'           # Rust language
-cask 'android-sdk'    # Android software dev kit
+# brew 'rust'           # Rust language
+# cask 'android-sdk'    # Android software dev kit
 
 # DevOps
-brew 'ansible'        # Automation
+# brew 'ansible'        # Automation
 brew 'docker'         # Containers
 
 # Development Utils
@@ -191,17 +194,18 @@ brew 'youtube-dl'   # YouTube video downloader
 cask '1password'      # Password manager (proprietary)
 cask 'tresorit'       # Encrypted file backup (proprietary)
 cask 'standard-notes' # Encrypted synced notes
-cask 'signal'         # Link to encrypted mobile messenger
-cask 'ledger-live'    # Crypto hardware wallet manager
-cask 'mountain-duck'  # Mount remote storage locations
-cask 'protonmail-bridge' # Decrypt ProtonMail emails
-cask 'protonvpn'      # Client app for ProtonVPN
-cask 'vorta'          # GUI for BorgBackup
+# cask 'signal'         # Link to encrypted mobile messenger
+# cask 'ledger-live'    # Crypto hardware wallet manager
+# cask 'mountain-duck'  # Mount remote storage locations
+# cask 'protonmail-bridge' # Decrypt ProtonMail emails
+# cask 'protonvpn'      # Client app for ProtonVPN
+# cask 'vorta'          # GUI for BorgBackup
 
 # Browsers
 cask 'firefox'
 cask 'chromium'
 cask 'orion'
+cask 'arc'
 
 #############################################################
 # MacOS-Specific Stuff                                      #
@@ -248,6 +252,36 @@ brew 'yabai'          # Tiling window manager
 # Mac OS Utility Apps
 cask 'coteditor'      # Just a simple plain-text editor
 cask 'little-snitch'  # Firewall app viewing / blocking traffic
-cask 'keka'           # File archiver and extractor
+# cask 'keka'           # File archiver and extractor
+
+# Personal Productivity
+brew 'atuin'        # Auto-suggestions for commands
+brew 'topgrade'       # Upgrade all the things
+brew 'mosh'         # Mobile shell for roaming
+cask 'warp'         # Terminal
+brew 'aws-cdk'      # AWS Cloud Development Kit
+brew 'awscli'       # AWS Command Line Interface
+cask 'sonos'        # Sonos controller
+brew 'mas'           # Mac App Store CLI
+
+# Mac OS Apps from the App Store
+
+mas '1Password for Safari', id: 1569813296
+mas 'Final Cut Pro', id: 424389933
+mas 'LanScan', id: 472226235
+mas 'Microsoft Excel', id: 462058435
+mas 'Microsoft OneNote', id: 784801555
+mas 'Microsoft PowerPoint', id: 462062816
+mas 'Microsoft Word', id: 462054704
+mas 'NordVPN', id: 905953485
+mas 'OneDrive', id: 823766827
+mas 'Slack', id: 803453959
+mas 'Speediness', id: 1596706466
+mas 'Tailscale', id: 1475387142
+mas 'Trello', id: 1278508951
+mas 'Xcode', id: 497799835
+mas 'Magnet', id: 441258766
+mas 'Spark', id: 1176895641
+mas 'Whatsapp Desktop', id: 1147396723
 
 # EOF

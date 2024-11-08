@@ -19,7 +19,6 @@
 # IMPORTANT: Before running, read through everything very carefully! #
 # For docs and more info, see: https://github.com/Voorman/dotfiles   #
 ######################################################################
-# Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> #
 ######################################################################
 
 # Color Variables

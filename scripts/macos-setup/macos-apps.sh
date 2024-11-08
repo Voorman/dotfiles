@@ -12,7 +12,6 @@
 #   --skip-intro - Skip the warning and intro section                        #
 #   --yes-to-all - Don't prompt user to agree to changes                     #
 #                                                                            #
-# Licensed under MIT -  (C) Alicia Sykes 2022 <https://aliciasykes.com>      #
 ##############################################################################
 
 ############################################################

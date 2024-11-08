@@ -8,5 +8,4 @@ Currently only MacOS, Arch-based systems, Debian-based systems and Windows are s
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 ┃ Source: https://github.com/Voorman/dotfiles/tree/master/scripts    ┃
-┃ Licensed under MIT (C) Alicia Sykes 2022 <https://aliciasykes.com> ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛

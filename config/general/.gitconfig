@@ -282,3 +282,5 @@
 [homebrew]
 	analyticsmessage = true
 	caskanalyticsmessage = true
+[lfs "https://github.com/Homebrew/brew.git/info/lfs"]
+	access = basic

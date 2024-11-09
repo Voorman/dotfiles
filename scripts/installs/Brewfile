@@ -262,7 +262,9 @@ cask 'warp'         # Terminal
 brew 'aws-cdk'      # AWS Cloud Development Kit
 brew 'awscli'       # AWS Command Line Interface
 cask 'sonos'        # Sonos controller
-brew 'mas'           # Mac App Store CLI
+brew 'orbstack'     # docker desktop mac
+cask 'maestral'     # Dropbock client mac
+brew 'mas'          # Mac App Store CLI
 
 # Mac OS Apps from the App Store
 

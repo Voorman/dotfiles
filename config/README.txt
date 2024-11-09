@@ -10,7 +10,7 @@ Important: Take care to read through files thoroughly before applying any change
 And always make a backup of your pre-existing config files before over-writing them
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ Source: https://github.com/Voorman/dotfiles/tree/master/scripts    ┃
+┃ Source: https://github.com/Voorman/dotfiles/tree/main/scripts    ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 ---

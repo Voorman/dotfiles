@@ -25,5 +25,5 @@ A set of Bash scripts for automating the setup and management of various systems
 
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ Source: https://github.com/Voorman/dotfiles/tree/master/scripts    ┃
+┃ Source: https://github.com/Voorman/dotfiles/tree/main/scripts    ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛

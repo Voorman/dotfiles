@@ -7,5 +7,5 @@ Be sure to check the contents of any file, and modify to your liking before exec
 Currently only MacOS, Arch-based systems, Debian-based systems and Windows are supported
 
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃ Source: https://github.com/Voorman/dotfiles/tree/master/scripts    ┃
+┃ Source: https://github.com/Voorman/dotfiles/tree/main/scripts    ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛

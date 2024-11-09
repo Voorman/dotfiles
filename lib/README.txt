@@ -11,4 +11,4 @@ Sub-modules:
 * dotbot    A dotfile management system, for symlinking
 * tpm       Tmux plugin manager
 
-Source: https://github.com/Voorman/dotfiles/tree/master/lib
+Source: https://github.com/Voorman/dotfiles/tree/main/lib

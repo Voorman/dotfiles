@@ -5,7 +5,7 @@
 	email = ivar@voorman.eu
 	username = Voorman
 [init]
-	defaultBranch = master
+	defaultBranch = main
 [pull]
 	rebase = false
 [core]
@@ -136,7 +136,7 @@
 	ms = merge --skip
 	#############
 	o = checkout
-	om = checkout master
+	om = checkout main
 	ob = checkout -b
 	opr = !sh -c 'git fo pull/$1/head:pr-$1 && git o pr-$1'
 	#############
@@ -152,10 +152,10 @@
 	psfo = push -f origin
 	psuo = push -u origin
 	#############
-	psom = push origin master
-	psaom = push --all origin master
-	psfom = push -f origin master
-	psuom = push -u origin master
+	psom = push origin main
+	psaom = push --all origin main
+	psfom = push -f origin main
+	psuom = push -u origin main
 	psoc = !git push origin $(git bc)
 	psaoc = !git push --all origin $(git bc)
 	psfoc = !git push -f origin $(git bc)
@@ -167,15 +167,15 @@
 	#############
 	plo = pull origin
 	pbo = pull --rebase origin
-	plom = pull origin master
+	plom = pull origin main
 	ploc = !git pull origin $(git bc)
-	pbom = pull --rebase origin master
+	pbom = pull --rebase origin main
 	pboc = !git pull --rebase origin $(git bc)
 	#############
 	plu = pull upstream
-	plum = pull upstream master
+	plum = pull upstream main
 	pluc = !git pull upstream $(git bc)
-	pbum = pull --rebase upstream master
+	pbum = pull --rebase upstream main
 	pbuc = !git pull --rebase upstream $(git bc)
 	#############
 	rb = rebase
@@ -192,7 +192,7 @@
 	rehh = reset --hard HEAD
 	remh = reset --mixed HEAD
 	resh = reset --soft HEAD
-	rehom = reset --hard origin/master
+	rehom = reset --hard origin/main
 	#############
 	r = remote
 	ra = remote add
@@ -240,7 +240,7 @@
 	subadd = !sh -c 'git submodule add git://github.com/$1 $2/$(basename $1)' -
 	subrm = !sh -c 'git submodule deinit -f -- $1 && rm -rf .git/modules/$1 && git rm -f $1' -
 	subup = submodule update --init --recursive
-	subpull = !git submodule foreach git pull --tags -f origin master
+	subpull = !git submodule foreach git pull --tags -f origin main
 	#############
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
@@ -251,7 +251,7 @@
 	bump = !sh -c 'git commit -am \"Version bump v$1\" && git psuoc && git release $1' -
 	release = !sh -c 'git tag v$1 && git pst' -
 	unrelease = !sh -c 'git tag -d v$1 && git pso :v$1' -
-	merged = !sh -c 'git o master && git plom && git bd $1 && git rpo' -
+	merged = !sh -c 'git o main && git plom && git bd $1 && git rpo' -
 	aliases = !git config -l | grep alias | cut -c 7-
 	snap = !git stash save 'snapshot: $(date)' && git stash apply 'stash@{0}'
 	bare = !sh -c 'git symbolic-ref HEAD refs/heads/$1 && git rm --cached -r . && git clean -xfd' -
@@ -263,7 +263,7 @@
 	#############
 	ours = "!f() { git checkout --ours $@ && git add $@; }; f"
 	theirs = "!f() { git checkout --theirs $@ && git add $@; }; f"
-	subrepo = !sh -c 'git filter-branch --prune-empty --subdirectory-filter $1 master' -
+	subrepo = !sh -c 'git filter-branch --prune-empty --subdirectory-filter $1 main' -
 	human = name-rev --name-only --refs=refs/heads/*
 [filter "lfs"]
 	clean = git-lfs clean -- %f

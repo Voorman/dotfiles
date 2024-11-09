@@ -2,37 +2,38 @@
 <p align="center"><i>My dotfiles for configuring literally everything (automatically!)</i></p>
 <p align="center">
   <a href="https://github.com/Voorman/dotfiles" title="Automate all the things!">
-    <img width="140" src="https://github.com/Voorman/dotfiles/raw/master/.github/logo.png" />
+    <img width="140" src="https://github.com/Voorman/dotfiles/raw/main/.github/logo.png" />
   </a>
 </p>
 <h3 align="center"><code>$HOME, sweet $HOME</code></h3>
 
 ## Contents
+
 - [Introduction to Dotfiles](#intro)
-    - [What are dotfiles?](#what-are-dotfiles)
-    - [Why do you need them?](#why-you-need-a-dotfile-system)
-    - [XDG Directories](#xdg-directories)
-    - [Containerized Userspace](#containerized-userspace)
-    - [Security](#security)
-    - [Dotfile Management Systems](#dotfile-management-systems)
-    - [So copy paste, right?](#so-copy-paste-right)
+  - [What are dotfiles?](#what-are-dotfiles)
+  - [Why do you need them?](#why-you-need-a-dotfile-system)
+  - [XDG Directories](#xdg-directories)
+  - [Containerized Userspace](#containerized-userspace)
+  - [Security](#security)
+  - [Dotfile Management Systems](#dotfile-management-systems)
+  - [So copy paste, right?](#so-copy-paste-right)
 - [My Dots](#my-dotfiles)
-    - [Setup](#setup)
-    - [Directory Structure](#directory-structure)
-    - [Install Script](#install-script)
-    - [Configuring](#configuring)
-    - [Colors](#color-theme)
-    - [Aliases](#aliases)
-    - [Packages](#packages)
-    - [System Preferences](#system-preferences)
-    - [Config Files](#config-files)
-    - [ZSH](#zsh)
-    - [Vim](#vim)
-    - [Tmux](#tmux)
-    - [Git](#git)
-    - [Dependencies](#dependencies)
-    - [Utilities](#utilities)
-        
+  - [Setup](#setup)
+  - [Directory Structure](#directory-structure)
+  - [Install Script](#install-script)
+  - [Configuring](#configuring)
+  - [Colors](#color-theme)
+  - [Aliases](#aliases)
+  - [Packages](#packages)
+  - [System Preferences](#system-preferences)
+  - [Config Files](#config-files)
+  - [ZSH](#zsh)
+  - [Vim](#vim)
+  - [Tmux](#tmux)
+  - [Git](#git)
+  - [Dependencies](#dependencies)
+  - [Utilities](#utilities)
+
 ---
 
 ## Intro
@@ -51,7 +52,7 @@ It's not hard to create your own dotfile repo, it's great fun and you'll learn a
 
 ### Why you need a Dotfile System?
 
-By using a dotfile system, you can set up a brand new machine in minutes, keep settings synced across multiple environments, easily roll-back changes, and never risk loosing your precious config files. 
+By using a dotfile system, you can set up a brand new machine in minutes, keep settings synced across multiple environments, easily roll-back changes, and never risk loosing your precious config files.
 
 This is important, because as a developer, we usually have multiple machines (work / personal laptops, cloud servers, virtual machines, some GH codespaces, maybe a few Pis, etc). And you're much more productive when working from a familiar environment, with all your settings applied just how you like them. But it would be a pain to have to set each of these machines up manually. Even if you've only got a single device, how much time would you loose if your data became lost or corrupted?
 
@@ -59,17 +60,17 @@ This is important, because as a developer, we usually have multiple machines (wo
 
 ### XDG Directories
 
-The location of config files can usually be defined using the [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec), which is honored by most apps. This lets you specify where config, log, cache and data files are stored, keeping your top-level home directory free from clutter. You can do this by setting environmental variables, usually within the [`.zshenv`](https://github.com/Voorman/dotfiles/blob/master/config/zsh/.zshenv) file.
+The location of config files can usually be defined using the [XDG base directory specification](https://specifications.freedesktop.org/basedir-spec), which is honored by most apps. This lets you specify where config, log, cache and data files are stored, keeping your top-level home directory free from clutter. You can do this by setting environmental variables, usually within the [`.zshenv`](https://github.com/Voorman/dotfiles/blob/main/config/zsh/.zshenv) file.
 
 For example, in my setup I've [set these variables](https://github.com/Voorman/dotfiles/blob/e839ab2d77f0be0d09b4f4ba3503c8b69ad925f3/config/zsh/.zshenv#L6=L10) to:
 
-Variable | Location
---- | ---
-`XDG_CONFIG_HOME` | `~/.config`
-`XDG_DATA_HOME`   | `~/.local/share`
-`XDG_BIN_HOME`   | `~/.local/bin`
-`XDG_LIB_HOME`    | `~/.local/lib`
-`XDG_CACHE_HOME`  | `~/.local/var/cache`
+| Variable          | Location             |
+| ----------------- | -------------------- |
+| `XDG_CONFIG_HOME` | `~/.config`          |
+| `XDG_DATA_HOME`   | `~/.local/share`     |
+| `XDG_BIN_HOME`    | `~/.local/bin`       |
+| `XDG_LIB_HOME`    | `~/.local/lib`       |
+| `XDG_CACHE_HOME`  | `~/.local/var/cache` |
 
 ---
 
@@ -81,7 +82,7 @@ This is awesome for a number of reasons: 1) Super minimal dependency installatio
 
 There's several methods of doing this, like having a Docker container or spinning up VMs with a predefined config (with something like [Vagrant](https://www.vagrantup.com/) or a [NixOS](https://nixos.org/)-based config).
 
-I went with an Alpine-based Docker container defined in the [`Dockerfile`](https://github.com/Voorman/dotfiles/blob/master/Dockerfile). To try it out, just run `docker run Voorman/dotfiles`.
+I went with an Alpine-based Docker container defined in the [`Dockerfile`](https://github.com/Voorman/dotfiles/blob/main/Dockerfile). To try it out, just run `docker run Voorman/dotfiles`.
 
 ---
 
@@ -97,7 +98,6 @@ I went with [git-crypt](https://github.com/AGWA/git-crypt), a GPG-based solution
 
 ---
 
-
 ### Dotfile Management Systems
 
 In terms of managing and applying your dotfiles, you can make things simple, or complex as you like.
@@ -112,7 +112,7 @@ For example, if your dotfiles are in `~/Documents/dotfiles`, you could create a 
 
 ```bash
 ln -s ~/Documents/dotfiles/zsh/.zshrc ~/.zshrc
-``` 
+```
 
 This would obviously get cumbersome very quickly if you had a lot of files, so you would really want to automate this process. You could either create your own script to do this, or use a tool specifically designed for this.
 
@@ -149,8 +149,7 @@ To learn more, DistroTube made an excellent [video about bare git repos](https:/
 
 #### Dotfile Dependencies
 
-In terms of managing dependencies, using either [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) or [git subtree](https://github.com/git/git/blob/master/contrib/subtree/git-subtree.txt) will let you keep dependencies in your project, while also separate from your own code and easily updatable. But again, you could do this yourself with a simple script.
-
+In terms of managing dependencies, using either [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) or [git subtree](https://github.com/git/git/blob/main/contrib/subtree/git-subtree.txt) will let you keep dependencies in your project, while also separate from your own code and easily updatable. But again, you could do this yourself with a simple script.
 
 ---
 
@@ -158,7 +157,7 @@ In terms of managing dependencies, using either [git submodules](https://git-scm
 
 Zach Holman wrote a great article titled [Dotfiles Are Meant to Be Forked](https://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/). I personally disagree with this, since your dotfiles are usually highly personalized, so what's right for one developer, likely won't be what someone else is looking for. They're also typically something you build up over time, and although some repos may provide a great starting point, it's really important to know what everything does, and how it works.
 
-By all means feel free to take what you want from mine. I've taken care to ensure that each file is standalone, and well documented so that certain files can just be dropped into any system. But I cannot stress enough the importance of reading through files to ensure it's actually what you want. 
+By all means feel free to take what you want from mine. I've taken care to ensure that each file is standalone, and well documented so that certain files can just be dropped into any system. But I cannot stress enough the importance of reading through files to ensure it's actually what you want.
 
 If you're looking for some more example dotfile repos to get you started, I can highly recommend taking a look at: [@holman/dotfiles](https://github.com/holman/dotfiles), [@nickjj/dotfiles](https://github.com/nickjj/dotfiles), [@caarlos0/dotfiles](https://github.com/caarlos0/dotfiles), [@cowboy/dotfiles](https://github.com/cowboy/dotfiles), [@drduh/config](https://github.com/drduh/config).
 
@@ -178,18 +177,17 @@ And for some more inspiration, check out [webpro/awesome-dotfiles](https://githu
 Let's Go!
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/Voorman/dotfiles/master/lets-go.sh)
+bash <(curl -s https://raw.githubusercontent.com/Voorman/dotfiles/main/lets-go.sh)
 ```
 
-This will execute the quick setup script (in [`lets-go.sh`](https://github.com/Voorman/dotfiles/blob/master/lets-go.sh)), which just clones the repo (if not yet present), then executes the [`install.sh`](https://github.com/Voorman/dotfiles/blob/master/install.sh) script. You can re-run this at anytime to update the dotfiles. You can also optionally pass in some variables to change the install location (`DOTFILES_DIR`) and source repo (`DOTFILES_REPO`) to use your fork.
+This will execute the quick setup script (in [`lets-go.sh`](https://github.com/Voorman/dotfiles/blob/main/lets-go.sh)), which just clones the repo (if not yet present), then executes the [`install.sh`](https://github.com/Voorman/dotfiles/blob/main/install.sh) script. You can re-run this at anytime to update the dotfiles. You can also optionally pass in some variables to change the install location (`DOTFILES_DIR`) and source repo (`DOTFILES_REPO`) to use your fork.
 
 The install script [does several things](#install-script), it takes care of checking dependencies are met, updating dotfiles and symlinks, configuring CLI (Vim, Tmux, ZSH, etc), and will prompt the user to install listed packages, update the OS and apply any system preferences. The script is idempotent, so it can be run multiple times without changing the result, beyond the initial application.
 
-_Alternatively, you can clone the repo yourself, cd into it, allow execution of [`install.sh`](https://github.com/Voorman/dotfiles/blob/master/install.sh) then run it to install or update._
+_Alternatively, you can clone the repo yourself, cd into it, allow execution of [`install.sh`](https://github.com/Voorman/dotfiles/blob/main/install.sh) then run it to install or update._
 
 <details>
 <summary>Example</summary>
-
 
 ```bash
 git clone --recursive git@github.com:Voorman/dotfiles.git ~/.dotfiles
@@ -199,55 +197,53 @@ chmod +x ~/.dotfiles/install.sh
 
 You'll probably want to fork the repo, then clone your fork instead, so update the above commands with the path to your repo, and optionally change the clone location on your disk.
 
-Once the repo is cloned, you can modify whatever files you like before running the install script. The [Directory Structure](#directory-structure) section provides an overview of where each file is located. Then see the [Configuring](#configuring) section for setting file paths and symlink locations. 
+Once the repo is cloned, you can modify whatever files you like before running the install script. The [Directory Structure](#directory-structure) section provides an overview of where each file is located. Then see the [Configuring](#configuring) section for setting file paths and symlink locations.
 
 </details>
 
 ---
-
 
 ### Directory Structure
 
 <pre>
 ~
 └──.
-   ├── <a href="https://github.com/Voorman/dotfiles/tree/master/config">config/</a>               # All configuration files
-   │ ├── <a href="https://github.com/Voorman/dotfiles/tree/master/bash">bash/</a>               # Bash (shell) config
-   │ ├── <a href="https://github.com/Voorman/dotfiles/tree/master/tmux">tmux/</a>               # Tmux (multiplexer) config
-   │ ├── <a href="https://github.com/Voorman/dotfiles/tree/master/vim">vim/</a>                # Vim (text editor) config
-   │ ├── <a href="https://github.com/Voorman/dotfiles/tree/master/zsh">zsh/</a>                # ZSH (shell) config
-   │ ├── <a href="https://github.com/Voorman/dotfiles/tree/master/macos">macos/</a>              # Config files for Mac-specific apps
-   │ └── <a href="https://github.com/Voorman/dotfiles/tree/master/desktop-apps">desktop-apps/</a>       # Config files for GUI apps
-   ├── <a href="https://github.com/Voorman/dotfiles/tree/master/scripts">scripts/</a>              # Bash scripts for automating tasks
-   │ ├── <a href="https://github.com/Voorman/dotfiles/tree/master/scripts/installs">installs/</a>           # Scripts for software installation
-   │ │ ├── <a href="https://github.com/Voorman/dotfiles/blob/master/scripts/installs/Brewfile">Brewfile</a>          # Package installs for MacOS via Homebrew
-   │ │ ├── <a href="https://github.com/Voorman/dotfiles/blob/master/scripts/installs/arch-pacman.sh">arch-pacman.sh</a>    # Package installs for Arch via Pacman
-   │ │ └── <a href="https://github.com/Voorman/dotfiles/blob/master/scripts/installs/flatpak.sh">flatpak.sh</a>        # Package installs for Linux desktops via Flatpak
-   │ ├── <a href="https://github.com/Voorman/dotfiles/tree/master/scripts/linux">linux/</a>              # Automated configuration for Linux
-   │ │ └── <a href="https://github.com/Voorman/dotfiles/blob/master/scripts/linux/dconf-prefs.sh">dconf-prefs.sh</a>    # Setting GNOME settings via dconf util
-   │ └── <a href="https://github.com/Voorman/dotfiles/tree/master/scripts/macos-setup">macos-setup/</a>        # Scripts for setting up Mac OS machines
-   │   ├── <a href="https://github.com/Voorman/dotfiles/blob/master/scripts/macos-setup/macos-apps.sh">macos-apps.sh</a>     # Sets app preferences
-   │   ├── <a href="https://github.com/Voorman/dotfiles/blob/master/scripts/macos-setup/macos-preferences.sh">macos-prefs.sh</a>    # Sets MacOS system preferences
-   │   └── <a href="https://github.com/Voorman/dotfiles/blob/master/scripts/macos-setup/macos-security.sh">macos-security.sh</a> # Applies MacOS security and privacy settings
-   ├── <a href="https://github.com/Voorman/dotfiles/tree/master/utils">utils/</a>                # Handy Shell utilitis for various day-to-day tasks
-   ├── <a href="https://github.com/Voorman/dotfiles/tree/master/.github">.github/</a>              # Meta files for GitHub repo
-   ├── <a href="https://github.com/Voorman/dotfiles/tree/master/lib">lib/</a>                  # External dependencies, as git sub-modules
-   ├── <a href="https://github.com/Voorman/dotfiles/blob/master/lets-go.sh">lets-go.sh</a>            # One-line remote installation entry point
-   ├── <a href="https://github.com/Voorman/dotfiles/blob/master/install.sh">install.sh</a>            # All-in-one install and setup script
-   └── <a href="https://github.com/Voorman/dotfiles/blob/master/symlinks.yaml">symlinks.yml</a>          # List of symlink locations
+   ├── <a href="https://github.com/Voorman/dotfiles/tree/main/config">config/</a>               # All configuration files
+   │ ├── <a href="https://github.com/Voorman/dotfiles/tree/main/bash">bash/</a>               # Bash (shell) config
+   │ ├── <a href="https://github.com/Voorman/dotfiles/tree/main/tmux">tmux/</a>               # Tmux (multiplexer) config
+   │ ├── <a href="https://github.com/Voorman/dotfiles/tree/main/vim">vim/</a>                # Vim (text editor) config
+   │ ├── <a href="https://github.com/Voorman/dotfiles/tree/main/zsh">zsh/</a>                # ZSH (shell) config
+   │ ├── <a href="https://github.com/Voorman/dotfiles/tree/main/macos">macos/</a>              # Config files for Mac-specific apps
+   │ └── <a href="https://github.com/Voorman/dotfiles/tree/main/desktop-apps">desktop-apps/</a>       # Config files for GUI apps
+   ├── <a href="https://github.com/Voorman/dotfiles/tree/main/scripts">scripts/</a>              # Bash scripts for automating tasks
+   │ ├── <a href="https://github.com/Voorman/dotfiles/tree/main/scripts/installs">installs/</a>           # Scripts for software installation
+   │ │ ├── <a href="https://github.com/Voorman/dotfiles/blob/main/scripts/installs/Brewfile">Brewfile</a>          # Package installs for MacOS via Homebrew
+   │ │ ├── <a href="https://github.com/Voorman/dotfiles/blob/main/scripts/installs/arch-pacman.sh">arch-pacman.sh</a>    # Package installs for Arch via Pacman
+   │ │ └── <a href="https://github.com/Voorman/dotfiles/blob/main/scripts/installs/flatpak.sh">flatpak.sh</a>        # Package installs for Linux desktops via Flatpak
+   │ ├── <a href="https://github.com/Voorman/dotfiles/tree/main/scripts/linux">linux/</a>              # Automated configuration for Linux
+   │ │ └── <a href="https://github.com/Voorman/dotfiles/blob/main/scripts/linux/dconf-prefs.sh">dconf-prefs.sh</a>    # Setting GNOME settings via dconf util
+   │ └── <a href="https://github.com/Voorman/dotfiles/tree/main/scripts/macos-setup">macos-setup/</a>        # Scripts for setting up Mac OS machines
+   │   ├── <a href="https://github.com/Voorman/dotfiles/blob/main/scripts/macos-setup/macos-apps.sh">macos-apps.sh</a>     # Sets app preferences
+   │   ├── <a href="https://github.com/Voorman/dotfiles/blob/main/scripts/macos-setup/macos-preferences.sh">macos-prefs.sh</a>    # Sets MacOS system preferences
+   │   └── <a href="https://github.com/Voorman/dotfiles/blob/main/scripts/macos-setup/macos-security.sh">macos-security.sh</a> # Applies MacOS security and privacy settings
+   ├── <a href="https://github.com/Voorman/dotfiles/tree/main/utils">utils/</a>                # Handy Shell utilitis for various day-to-day tasks
+   ├── <a href="https://github.com/Voorman/dotfiles/tree/main/.github">.github/</a>              # Meta files for GitHub repo
+   ├── <a href="https://github.com/Voorman/dotfiles/tree/main/lib">lib/</a>                  # External dependencies, as git sub-modules
+   ├── <a href="https://github.com/Voorman/dotfiles/blob/main/lets-go.sh">lets-go.sh</a>            # One-line remote installation entry point
+   ├── <a href="https://github.com/Voorman/dotfiles/blob/main/install.sh">install.sh</a>            # All-in-one install and setup script
+   └── <a href="https://github.com/Voorman/dotfiles/blob/main/symlinks.yaml">symlinks.yml</a>          # List of symlink locations
 </pre>
-
 
 ---
 
 ### Install Script
 
-The setup script ([`install.sh`](https://github.com/Voorman/dotfiles/blob/master/install.sh)) will do the following:
+The setup script ([`install.sh`](https://github.com/Voorman/dotfiles/blob/main/install.sh)) will do the following:
 
 - **Setup**
   - Print welcome message, and a summary of proposed changes, and prompt user to continue
   - Ensure that core dependencies are met (git, zsh, vim)
-  - Set variables by reading any passed parameters, or fallback to sensible defaults (see [`.zshenv`](https://github.com/Voorman/dotfiles/blob/master/config/zsh/.zshenv))  
+  - Set variables by reading any passed parameters, or fallback to sensible defaults (see [`.zshenv`](https://github.com/Voorman/dotfiles/blob/main/config/zsh/.zshenv))
 - **Dotfiles**
   - If dotfiles not yet present, will clone from git, otherwise pulls latest changes
   - Setup / update symlinks each file to it's correct location on disk
@@ -273,6 +269,7 @@ The setup script ([`install.sh`](https://github.com/Voorman/dotfiles/blob/master
   - Exits
 
 The install script can accept several flags and environmental variables to configure installation:
+
 - **Flags**
   - `--help` - Prints help menu / shows info, without making any changes
   - `--auto-yes` - Doesn't prompt for any user input, always assumes Yes (use with care!)
@@ -285,7 +282,7 @@ The install script can accept several flags and environmental variables to confi
 
 ### Configuring
 
-The locations for all symlinks are defined in [`symlinks.yaml`](https://github.com/Voorman/dotfiles/blob/master/symlinks.yaml). These are managed using [Dotbot](https://github.com/anishathalye/dotbot), and will be applied whenever you run the [`install.sh`](https://github.com/Voorman/dotfiles/blob/master/install.sh) script. The symlinks set locations based on XDG paths, all of which are defined in [`.zshenv`](https://github.com/Voorman/dotfiles/blob/master/config/zsh/.zshenv).
+The locations for all symlinks are defined in [`symlinks.yaml`](https://github.com/Voorman/dotfiles/blob/main/symlinks.yaml). These are managed using [Dotbot](https://github.com/anishathalye/dotbot), and will be applied whenever you run the [`install.sh`](https://github.com/Voorman/dotfiles/blob/main/install.sh) script. The symlinks set locations based on XDG paths, all of which are defined in [`.zshenv`](https://github.com/Voorman/dotfiles/blob/main/config/zsh/.zshenv).
 
 ---
 
@@ -312,7 +309,7 @@ You can view a list of defined aliases by running `alias`, or search for a speci
 
 #### My Aliases
 
-All aliases in my dotfiles are categorised into files located in [`zsh/aliases/`](https://github.com/Voorman/dotfiles/blob/master/config/zsh/aliases/) which are imported in [`zsh/.zshrc`](https://github.com/Voorman/dotfiles/blob/master/config/zsh/.zshrc#L9-L14).
+All aliases in my dotfiles are categorised into files located in [`zsh/aliases/`](https://github.com/Voorman/dotfiles/blob/main/config/zsh/aliases/) which are imported in [`zsh/.zshrc`](https://github.com/Voorman/dotfiles/blob/main/config/zsh/.zshrc#L9-L14).
 
 The following section lists all (or most) the aliases by category:
 
@@ -320,85 +317,83 @@ The following section lists all (or most) the aliases by category:
 
 <summary><b>Git Aliases</b></summary>
 
-> [`zsh/aliases/git.zsh`](https://github.com/Voorman/dotfiles/blob/master/config/zsh/aliases/git.zsh)
+> [`zsh/aliases/git.zsh`](https://github.com/Voorman/dotfiles/blob/main/config/zsh/aliases/git.zsh)
 
-Alias | Description
----|---
-`g` | git
-`gs` | `git status` - List changed files
-`ga` | `git add` - Add <files> to the next commit
-`gaa` | `git add .` - Add all changed files
-`grm` | `git rm` - Remove <file>
-`gc` | `git commit` - Commit staged files, needs -m ""
-`gcm` | `git commit` takes $1 as commit message
-`gps` | `git push` - Push local commits to <origin> <branch>
-`gpl` | `git pull` - Pull changes with <origin> <branch>
-`gf` | `git fetch` - Download branch changes, without modifying files
-`grb` | `git rebase` - Rebase the current HEAD into <branch>
-`grba` | `git rebase --abort` - Cancel current rebase sesh
-`grbc` | `git rebase --continue` - Continue onto next diff
-`gm` | `git merge` - Merge <branch> into your current HEAD
-`gi` | `git init` - Initiialize a new empty local repo
-`gcl` | `git clone` - Downloads repo from <url>
-`gch` | `git checkout` - Switch the HEAD to <branch>
-`gb` | `git branch` - Create a new <branch> from HEAD
-`gd` | `git diff` - Show all changes to untracked files
-`gtree` | `git log --graph --oneline --decorate` # Show branch tree
-`gl` | `git log`
-`gt` | `git tag` - Tag the current commit, 1 param
-`gtl` | `git tag -l` - List all tags, optionally with pattern
-`gtlm` | `git tag -n` - List all tags, with their messages
-`gtp` | `git push --tags` - Publish tags
-`gr` | `git remote`
-`grs` | `git remote show` - Show current remote origin
-`grl` | `git remote -v` - List all currently configured remotes
-`grr` | `git remote rm origin` - Remove current origin
-`gra` | `git remote add` - Add new remote origin
-`grurl` | `git remote set-url origin` - Sets URL of existing origin
-`guc` | `git revert` - Revert a <commit>
-`gu` | `git reset` - Reset HEAD pointer to a <commit>, perserves changes
-`gua` | `git reset --hard HEAD` - Resets all uncommited changes
-`gnewmsg` | `git commit --amend -m` - Update <message> of previous commit
-`gclean` | `git clean -df` - Remove all untracked files
-`glfsi` | `git lfs install`
-`glfst` | `git lfs track`
-`glfsls` | `git lfs ls-files`
-`glfsmi` | `git lfs migrate import --include=`
-`gplfs` | `git lfs push origin "$(git_current_branch)" --all` - Push LFS changes to current branch
-`gj` | Find and cd into the root of your current project (based on where the .git directory
-`clone` | Shorthand for clone, run `clone user/repo`, if user isn't specified will default to yourself
-`gsync` | Sync fork against upstream repo
-`gfrb` | Fetch, rebase and push updates to current branch. Optionally specify target, defaults to 'master'
-`gignore` | Integrates with gitignore.io to auto-populate .gitignore file
-`gho` | Opens the current repo + branch in GitHub
-`ghp` | Opens pull request tab for the current GH repo
-
+| Alias     | Description                                                                                     |
+| --------- | ----------------------------------------------------------------------------------------------- |
+| `g`       | git                                                                                             |
+| `gs`      | `git status` - List changed files                                                               |
+| `ga`      | `git add` - Add <files> to the next commit                                                      |
+| `gaa`     | `git add .` - Add all changed files                                                             |
+| `grm`     | `git rm` - Remove <file>                                                                        |
+| `gc`      | `git commit` - Commit staged files, needs -m ""                                                 |
+| `gcm`     | `git commit` takes $1 as commit message                                                         |
+| `gps`     | `git push` - Push local commits to <origin> <branch>                                            |
+| `gpl`     | `git pull` - Pull changes with <origin> <branch>                                                |
+| `gf`      | `git fetch` - Download branch changes, without modifying files                                  |
+| `grb`     | `git rebase` - Rebase the current HEAD into <branch>                                            |
+| `grba`    | `git rebase --abort` - Cancel current rebase sesh                                               |
+| `grbc`    | `git rebase --continue` - Continue onto next diff                                               |
+| `gm`      | `git merge` - Merge <branch> into your current HEAD                                             |
+| `gi`      | `git init` - Initiialize a new empty local repo                                                 |
+| `gcl`     | `git clone` - Downloads repo from <url>                                                         |
+| `gch`     | `git checkout` - Switch the HEAD to <branch>                                                    |
+| `gb`      | `git branch` - Create a new <branch> from HEAD                                                  |
+| `gd`      | `git diff` - Show all changes to untracked files                                                |
+| `gtree`   | `git log --graph --oneline --decorate` # Show branch tree                                       |
+| `gl`      | `git log`                                                                                       |
+| `gt`      | `git tag` - Tag the current commit, 1 param                                                     |
+| `gtl`     | `git tag -l` - List all tags, optionally with pattern                                           |
+| `gtlm`    | `git tag -n` - List all tags, with their messages                                               |
+| `gtp`     | `git push --tags` - Publish tags                                                                |
+| `gr`      | `git remote`                                                                                    |
+| `grs`     | `git remote show` - Show current remote origin                                                  |
+| `grl`     | `git remote -v` - List all currently configured remotes                                         |
+| `grr`     | `git remote rm origin` - Remove current origin                                                  |
+| `gra`     | `git remote add` - Add new remote origin                                                        |
+| `grurl`   | `git remote set-url origin` - Sets URL of existing origin                                       |
+| `guc`     | `git revert` - Revert a <commit>                                                                |
+| `gu`      | `git reset` - Reset HEAD pointer to a <commit>, perserves changes                               |
+| `gua`     | `git reset --hard HEAD` - Resets all uncommited changes                                         |
+| `gnewmsg` | `git commit --amend -m` - Update <message> of previous commit                                   |
+| `gclean`  | `git clean -df` - Remove all untracked files                                                    |
+| `glfsi`   | `git lfs install`                                                                               |
+| `glfst`   | `git lfs track`                                                                                 |
+| `glfsls`  | `git lfs ls-files`                                                                              |
+| `glfsmi`  | `git lfs migrate import --include=`                                                             |
+| `gplfs`   | `git lfs push origin "$(git_current_branch)" --all` - Push LFS changes to current branch        |
+| `gj`      | Find and cd into the root of your current project (based on where the .git directory            |
+| `clone`   | Shorthand for clone, run `clone user/repo`, if user isn't specified will default to yourself    |
+| `gsync`   | Sync fork against upstream repo                                                                 |
+| `gfrb`    | Fetch, rebase and push updates to current branch. Optionally specify target, defaults to 'main' |
+| `gignore` | Integrates with gitignore.io to auto-populate .gitignore file                                   |
+| `gho`     | Opens the current repo + branch in GitHub                                                       |
+| `ghp`     | Opens pull request tab for the current GH repo                                                  |
 
 </details>
-
 
 <details>
 
 <summary><b>Flutter Aliases</b></summary>
 
-> [`zsh/aliases/flutter.zsh`](https://github.com/Voorman/dotfiles/blob/master/config/zsh/aliases/flutter.zsh)
+> [`zsh/aliases/flutter.zsh`](https://github.com/Voorman/dotfiles/blob/main/config/zsh/aliases/flutter.zsh)
 
-Alias | Description
----|---
-`fl` | flutter - Main fultter command
-`flattach` | `flutter attach` - Attaches flutter to a running flutter application with enabled observatory
-`flb` | `flutter build` - Build flutter application
-`flchnl` | `flutter channel` - Switches flutter channel (requires input of desired channel)
-`flc` | `flutter clean` - Cleans flutter project
-`fldvcs` | `flutter devices` - List connected devices (if any)
-`fldoc` | `flutter doctor` - Runs flutter doctor
-`flpub` | `flutter pub` - Shorthand for flutter pub command
-`flget` | `flutter pub get` - Installs dependencies
-`flr` | `flutter run` - Runs flutter app
-`flrd` | `flutter run --debug` - Runs flutter app in debug mode (default mode)
-`flrp` | `flutter run --profile` - Runs flutter app in profile mode
-`flrr` | `flutter run --release` - Runs flutter app in release mode
-`flupgrd` | `flutter upgrade` - Upgrades flutter version depending on the current channel
+| Alias      | Description                                                                                   |
+| ---------- | --------------------------------------------------------------------------------------------- |
+| `fl`       | flutter - Main fultter command                                                                |
+| `flattach` | `flutter attach` - Attaches flutter to a running flutter application with enabled observatory |
+| `flb`      | `flutter build` - Build flutter application                                                   |
+| `flchnl`   | `flutter channel` - Switches flutter channel (requires input of desired channel)              |
+| `flc`      | `flutter clean` - Cleans flutter project                                                      |
+| `fldvcs`   | `flutter devices` - List connected devices (if any)                                           |
+| `fldoc`    | `flutter doctor` - Runs flutter doctor                                                        |
+| `flpub`    | `flutter pub` - Shorthand for flutter pub command                                             |
+| `flget`    | `flutter pub get` - Installs dependencies                                                     |
+| `flr`      | `flutter run` - Runs flutter app                                                              |
+| `flrd`     | `flutter run --debug` - Runs flutter app in debug mode (default mode)                         |
+| `flrp`     | `flutter run --profile` - Runs flutter app in profile mode                                    |
+| `flrr`     | `flutter run --release` - Runs flutter app in release mode                                    |
+| `flupgrd`  | `flutter upgrade` - Upgrades flutter version depending on the current channel                 |
 
 </details>
 
@@ -406,297 +401,289 @@ Alias | Description
 
 <summary><b>Rust / Cargo Aliases</b></summary>
 
-> [`zsh/aliases/rust.zsh`](https://github.com/Voorman/dotfiles/blob/master/config/zsh/aliases/rust.zsh) <br>
+> [`zsh/aliases/rust.zsh`](https://github.com/Voorman/dotfiles/blob/main/config/zsh/aliases/rust.zsh) <br>
 > Aliases and shortcuts for frequently used Rust and Cargo commands and common tasks
 
 #### Cargo Basic Commands
 
-Alias | Description
----|---
-`cr` | `cargo run` - Compiles and runs the current project
-`cb` | `cargo build` - Compiles the current project
-`ct` | `cargo test` - Runs tests for the current project
+| Alias | Description                                         |
+| ----- | --------------------------------------------------- |
+| `cr`  | `cargo run` - Compiles and runs the current project |
+| `cb`  | `cargo build` - Compiles the current project        |
+| `ct`  | `cargo test` - Runs tests for the current project   |
 
 #### Extended Cargo Commands
 
-Alias | Description
----|---
-`carc` | `cargo clean` - Removes the target directory
-`caru` | `cargo update` - Updates dependencies as recorded in the local lock file
-`carch` | `cargo check` - Checks the current project to see if it compiles without producing an executable
-`carcl` | `cargo clippy` - Lints the project with Clippy
-`card` | `cargo doc` - Builds documentation for the current project
-`carbr` | `cargo build --release` - Compiles the project with optimizations
-`carrr` | `cargo run --release` - Runs the project with optimizations
-`carws` | `cargo workspace` - Manages workspace-level tasks
-`carwsl` | `cargo workspace list` - Lists all members of the current workspace
-`carad` | `cargo add` - Adds a dependency to a Cargo.toml manifest file
-`carrm` | `cargo rm` - Removes a dependency from a Cargo.toml manifest file
-`carp` | `cargo publish` - Packages and uploads the project to crates.io
-`carau` | `cargo audit` - Audits Cargo.lock for crates with security vulnerabilities
-`cargen` | `cargo generate --git` - Generates a new project from a Git repository template
-`carfmt` | `cargo fmt` - Formats the code in the current project
+| Alias    | Description                                                                                      |
+| -------- | ------------------------------------------------------------------------------------------------ |
+| `carc`   | `cargo clean` - Removes the target directory                                                     |
+| `caru`   | `cargo update` - Updates dependencies as recorded in the local lock file                         |
+| `carch`  | `cargo check` - Checks the current project to see if it compiles without producing an executable |
+| `carcl`  | `cargo clippy` - Lints the project with Clippy                                                   |
+| `card`   | `cargo doc` - Builds documentation for the current project                                       |
+| `carbr`  | `cargo build --release` - Compiles the project with optimizations                                |
+| `carrr`  | `cargo run --release` - Runs the project with optimizations                                      |
+| `carws`  | `cargo workspace` - Manages workspace-level tasks                                                |
+| `carwsl` | `cargo workspace list` - Lists all members of the current workspace                              |
+| `carad`  | `cargo add` - Adds a dependency to a Cargo.toml manifest file                                    |
+| `carrm`  | `cargo rm` - Removes a dependency from a Cargo.toml manifest file                                |
+| `carp`   | `cargo publish` - Packages and uploads the project to crates.io                                  |
+| `carau`  | `cargo audit` - Audits Cargo.lock for crates with security vulnerabilities                       |
+| `cargen` | `cargo generate --git` - Generates a new project from a Git repository template                  |
+| `carfmt` | `cargo fmt` - Formats the code in the current project                                            |
 
 #### Rustup Commands
 
-Alias | Description
----|---
-`ru-update` | `rustup update` - Updates the Rust toolchain
-`ru-default` | `rustup default` - Sets a default Rust toolchain
+| Alias        | Description                                      |
+| ------------ | ------------------------------------------------ |
+| `ru-update`  | `rustup update` - Updates the Rust toolchain     |
+| `ru-default` | `rustup default` - Sets a default Rust toolchain |
 
 #### Helper Functions and Other Aliases
 
-Function / Alias | Description
----|---
-`new_rust_project` | Function to create a new Rust project with the specified name
-`search_crates` | Function to search crates.io for a given query
-`rustdoc` | Opens the Rust documentation in the default web browser
-`rustbook` | Opens 'The Rust Programming Language' book in the default web browser
-`update_rust` | Updates the Rust toolchain and all installed components
-`rvalgrind` | Runs Rust programs with Valgrind for memory leak analysis (if Valgrind is installed)
-`clean_rust_workspace` | Cleans up the target directory in all workspaces
+| Function / Alias       | Description                                                                          |
+| ---------------------- | ------------------------------------------------------------------------------------ |
+| `new_rust_project`     | Function to create a new Rust project with the specified name                        |
+| `search_crates`        | Function to search crates.io for a given query                                       |
+| `rustdoc`              | Opens the Rust documentation in the default web browser                              |
+| `rustbook`             | Opens 'The Rust Programming Language' book in the default web browser                |
+| `update_rust`          | Updates the Rust toolchain and all installed components                              |
+| `rvalgrind`            | Runs Rust programs with Valgrind for memory leak analysis (if Valgrind is installed) |
+| `clean_rust_workspace` | Cleans up the target directory in all workspaces                                     |
 
 </details>
-
 
 <details>
 
 <summary><b>Node.js Aliases</b></summary>
 
-> [`zsh/aliases/node-js.zsh`](https://github.com/Voorman/dotfiles/blob/master/config/zsh/aliases/node-js.zsh)
+> [`zsh/aliases/node-js.zsh`](https://github.com/Voorman/dotfiles/blob/main/config/zsh/aliases/node-js.zsh)
 
 These short-hand aliases and helper functions speed up running common commands and tasks for web development, within Node / JavaScript projects.
-
 
 - After `cd`-ing into a directory which contains an `.nvmrc` file (to specify Node version), NVM will automatically switch to that version. Run `nvmlts` / `nvmlatest` to go back to LTS/latest Node version
 - If you try an use Yarn, and corepack isn't yet configured, Corepack will be enabled, and Yarn installed
 - Running `yv` will print a neatly formatted summary of the versions of core packages (Node, NPM, Yarn, NVM, Git, etc..) currently being used
 
-
 #### Helper Functions
 
-Function | Description
----|---
-`yarn-nuke` | Removes and reinstalls all `node_modules` and associated lock files
-`print_node_versions` | Displays installed versions of Node.js and related packages
-`source_nvm` | Initializes NVM when using Node.js commands
-`enable_corepack` | Enables Corepack to use Yarn if not already installed
-`yarn_wrapper` | Wrapper function for Yarn, setting up Yarn if it's not yet found
-`install_nvm` | Installs or updates NVM
-`launch-url` | Opens a given URL using the system's default method
-`node-docs` | Opens Node.js documentation for a specific API section
-`open-npm` | Opens a specified module's page on npmjs.com
-`open_repo` | Opens the current Git repository's remote URL in a web browser
+| Function              | Description                                                         |
+| --------------------- | ------------------------------------------------------------------- |
+| `yarn-nuke`           | Removes and reinstalls all `node_modules` and associated lock files |
+| `print_node_versions` | Displays installed versions of Node.js and related packages         |
+| `source_nvm`          | Initializes NVM when using Node.js commands                         |
+| `enable_corepack`     | Enables Corepack to use Yarn if not already installed               |
+| `yarn_wrapper`        | Wrapper function for Yarn, setting up Yarn if it's not yet found    |
+| `install_nvm`         | Installs or updates NVM                                             |
+| `launch-url`          | Opens a given URL using the system's default method                 |
+| `node-docs`           | Opens Node.js documentation for a specific API section              |
+| `open-npm`            | Opens a specified module's page on npmjs.com                        |
+| `open_repo`           | Opens the current Git repository's remote URL in a web browser      |
 
 #### Special Node Commands
 
-Alias | Description
----|---
-`npmscripts` | Prints available scripts from the current project's package.json
-`docker-node` | Runs Node.js using Docker, mounting the current directory
-`nodesize` | Prints the size of the `node_modules` folder
+| Alias         | Description                                                      |
+| ------------- | ---------------------------------------------------------------- |
+| `npmscripts`  | Prints available scripts from the current project's package.json |
+| `docker-node` | Runs Node.js using Docker, mounting the current directory        |
+| `nodesize`    | Prints the size of the `node_modules` folder                     |
 
 #### Yarn
 
-Alias | Description
----|---
-`ys` | `yarn start` - Runs the start command as defined in the package.json
-`yt` | `yarn test` - Runs tests associated with the project
-`yb` | `yarn build` - Builds the project
-`yl` | `yarn lint` - Runs the linting tool on the project codebase
-`yd` | `yarn dev` - Starts the development server
-`yp` | `yarn publish` - Publishes the package to the registry
-`yr` | `yarn run` - Runs a defined package script
-`ya` | `yarn add` - Installs a given dependency
-`ye` | `yarn remove` - Removes a specified dependency
-`yi` | `yarn install` - Installs project dependencies
-`yg` | `yarn upgrade` - Upgrades project dependencies
-`yu` | `yarn update` - Updates project dependencies
-`yf` | `yarn info` - Shows information about a package
-`yz` | `yarn audit` - Audits package dependencies for security vulnerabilities
-`yc` | `yarn autoclean` - Cleans and removes unnecessary dependencies
-`yk` | `yarn check` - Verifies the integrity of dependencies
-`yh` | `yarn help` - Displays help information about Yarn
-`yarn-nuke` | Removes `node_modules`, `yarn.lock`, `package-lock.json` and does a full fresh reinstall of dependencies
-`yv` | Prints out the current version of Node.js, Yarn, NPM, NVM, and Git
+| Alias       | Description                                                                                              |
+| ----------- | -------------------------------------------------------------------------------------------------------- |
+| `ys`        | `yarn start` - Runs the start command as defined in the package.json                                     |
+| `yt`        | `yarn test` - Runs tests associated with the project                                                     |
+| `yb`        | `yarn build` - Builds the project                                                                        |
+| `yl`        | `yarn lint` - Runs the linting tool on the project codebase                                              |
+| `yd`        | `yarn dev` - Starts the development server                                                               |
+| `yp`        | `yarn publish` - Publishes the package to the registry                                                   |
+| `yr`        | `yarn run` - Runs a defined package script                                                               |
+| `ya`        | `yarn add` - Installs a given dependency                                                                 |
+| `ye`        | `yarn remove` - Removes a specified dependency                                                           |
+| `yi`        | `yarn install` - Installs project dependencies                                                           |
+| `yg`        | `yarn upgrade` - Upgrades project dependencies                                                           |
+| `yu`        | `yarn update` - Updates project dependencies                                                             |
+| `yf`        | `yarn info` - Shows information about a package                                                          |
+| `yz`        | `yarn audit` - Audits package dependencies for security vulnerabilities                                  |
+| `yc`        | `yarn autoclean` - Cleans and removes unnecessary dependencies                                           |
+| `yk`        | `yarn check` - Verifies the integrity of dependencies                                                    |
+| `yh`        | `yarn help` - Displays help information about Yarn                                                       |
+| `yarn-nuke` | Removes `node_modules`, `yarn.lock`, `package-lock.json` and does a full fresh reinstall of dependencies |
+| `yv`        | Prints out the current version of Node.js, Yarn, NPM, NVM, and Git                                       |
 
 #### NPM
 
-Alias | Description
----|---
-`npmi` | `npm install` - Installs project dependencies
-`npmu` | `npm uninstall` - Uninstalls a specified dependency
-`npmr` | `npm run` - Runs a defined script in package.json
-`npms` | `npm start` - Runs the start script from package.json
-`npmt` | `npm test` - Runs tests in the project
-`npml` | `npm run lint` - Runs the linting tool on the project codebase
-`npmd` | `npm run dev` - Runs the development server
-`npmp` | `npm publish` - Publishes the package to the npm registry
-`npmo` | Opens NPM documentation for a specific module or the package's homepage
+| Alias  | Description                                                             |
+| ------ | ----------------------------------------------------------------------- |
+| `npmi` | `npm install` - Installs project dependencies                           |
+| `npmu` | `npm uninstall` - Uninstalls a specified dependency                     |
+| `npmr` | `npm run` - Runs a defined script in package.json                       |
+| `npms` | `npm start` - Runs the start script from package.json                   |
+| `npmt` | `npm test` - Runs tests in the project                                  |
+| `npml` | `npm run lint` - Runs the linting tool on the project codebase          |
+| `npmd` | `npm run dev` - Runs the development server                             |
+| `npmp` | `npm publish` - Publishes the package to the npm registry               |
+| `npmo` | Opens NPM documentation for a specific module or the package's homepage |
 
 #### NVM
 
-Alias | Description
----|---
-`nvmi` | `nvm install` - Installs a specified version of Node.js
-`nvmu` | `nvm use` - Switches to a specific Node.js version
-`nvml` | `nvm ls` - Lists installed Node.js versions
-`nvmr` | `nvm run` - Runs a given version of Node.js
-`nvme` | `nvm exec` - Executes a command using a specified version of Node.js
-`nvmw` | `nvm which` - Identifies which version of Node.js is being used
-`nvmlr` | `nvm ls-remote` - Lists Node.js versions available for installation
-`nvmlts` | Installs and uses the latest LTS version of Node.js
-`nvmlatest` | Installs the latest version of Node.js with the latest npm
-`nvmsetup` | Installs or updates NVM (Node Version Manager)
+| Alias       | Description                                                          |
+| ----------- | -------------------------------------------------------------------- |
+| `nvmi`      | `nvm install` - Installs a specified version of Node.js              |
+| `nvmu`      | `nvm use` - Switches to a specific Node.js version                   |
+| `nvml`      | `nvm ls` - Lists installed Node.js versions                          |
+| `nvmr`      | `nvm run` - Runs a given version of Node.js                          |
+| `nvme`      | `nvm exec` - Executes a command using a specified version of Node.js |
+| `nvmw`      | `nvm which` - Identifies which version of Node.js is being used      |
+| `nvmlr`     | `nvm ls-remote` - Lists Node.js versions available for installation  |
+| `nvmlts`    | Installs and uses the latest LTS version of Node.js                  |
+| `nvmlatest` | Installs the latest version of Node.js with the latest npm           |
+| `nvmsetup`  | Installs or updates NVM (Node Version Manager)                       |
 
 </details>
-
 
 <details>
 
 <summary><b>General Aliases</b></summary>
 
-> [`zsh/aliases/general.zsh`](https://github.com/Voorman/dotfiles/blob/master/config/zsh/aliases/general.zsh)
-
+> [`zsh/aliases/general.zsh`](https://github.com/Voorman/dotfiles/blob/main/config/zsh/aliases/general.zsh)
 
 ##### Single-Letter Frequently-Used Commands (only set if not already in use)
 
-Alias | Description
----|---
-`a` | alias`
-`c` | `clear`
-`d` | `date`
-`e` | `exit`
-`f` | `find`
-`g` | `grep`
-`h` | `history`
-`i` | `id`
-`j` | `jobs`
-`l` | `ls`
-`m` | `man`
-`p` | `pwd`
-`s` | `sudo`
-`t` | `touch`
-`v` | `vim`
+| Alias | Description |
+| ----- | ----------- |
+| `a`   | alias`      |
+| `c`   | `clear`     |
+| `d`   | `date`      |
+| `e`   | `exit`      |
+| `f`   | `find`      |
+| `g`   | `grep`      |
+| `h`   | `history`   |
+| `i`   | `id`        |
+| `j`   | `jobs`      |
+| `l`   | `ls`        |
+| `m`   | `man`       |
+| `p`   | `pwd`       |
+| `s`   | `sudo`      |
+| `t`   | `touch`     |
+| `v`   | `vim`       |
 
 ##### File listing options
 
-Alias | Description
----|---
-`la` | `ls -A` - List all files/ includes hidden
-`ll` | `ls -lAFh` - List all files, with full details
-`lm` | `ls -tA -1` - List files sorted by last modified
-`lb` | `ls -lhSA` - List all files sorted by biggest
-`lr` | `ls -R` - List files in sub-directories, recursivley
-`lf` | `ls -A \| grep` - Use grep to find files
-`ln` | `find . -type f \| wc -l` - Shows number of files
-`ld` | `ls -l \| grep "^d"` - List directories only
-`la` | `exa -aF --icons` - List all files, including hidden (only if `exa` is installed)
-`ll` | `exa -laF --icons` - Show files with all details (only if `exa` is installed)
-`lm` | `exa -lahr --color-scale --icons -s=modified` - Sort by date modified, most revent first (only if `exa` is installed)
-`lb` | `exa -lahr --color-scale --icons -s=size` - Sort by size largest first (only if `exa` is installed)
-`tree` | `f() { exa -aF --tree -L=${1:-2} --icons };f` - List files as tree (only if `exa` is installed)
-`lz` | List the contents of a specified compressed archive. Supported formats include zip, rar, tar, tar.gz and ace
+| Alias  | Description                                                                                                           |
+| ------ | --------------------------------------------------------------------------------------------------------------------- |
+| `la`   | `ls -A` - List all files/ includes hidden                                                                             |
+| `ll`   | `ls -lAFh` - List all files, with full details                                                                        |
+| `lm`   | `ls -tA -1` - List files sorted by last modified                                                                      |
+| `lb`   | `ls -lhSA` - List all files sorted by biggest                                                                         |
+| `lr`   | `ls -R` - List files in sub-directories, recursivley                                                                  |
+| `lf`   | `ls -A \| grep` - Use grep to find files                                                                              |
+| `ln`   | `find . -type f \| wc -l` - Shows number of files                                                                     |
+| `ld`   | `ls -l \| grep "^d"` - List directories only                                                                          |
+| `la`   | `exa -aF --icons` - List all files, including hidden (only if `exa` is installed)                                     |
+| `ll`   | `exa -laF --icons` - Show files with all details (only if `exa` is installed)                                         |
+| `lm`   | `exa -lahr --color-scale --icons -s=modified` - Sort by date modified, most revent first (only if `exa` is installed) |
+| `lb`   | `exa -lahr --color-scale --icons -s=size` - Sort by size largest first (only if `exa` is installed)                   |
+| `tree` | `f() { exa -aF --tree -L=${1:-2} --icons };f` - List files as tree (only if `exa` is installed)                       |
+| `lz`   | List the contents of a specified compressed archive. Supported formats include zip, rar, tar, tar.gz and ace          |
 
 ##### Getting Around
 
-Alias | Description
----|---
-`mkcd` | Create new directory, and cd into it. Takes new directory name as param
-`mkcp` | Copies a directory, and navigates into it
-`mkmv` | Moves a directory, and navigates into it
+| Alias  | Description                                                             |
+| ------ | ----------------------------------------------------------------------- |
+| `mkcd` | Create new directory, and cd into it. Takes new directory name as param |
+| `mkcp` | Copies a directory, and navigates into it                               |
+| `mkmv` | Moves a directory, and navigates into it                                |
 
 ##### Getting outa directories
 
-Alias | Description
----|---
-`c~` | Navigate to ~
-`c.` | Go up 1 directory
-`c..` | Go up 2 directories
-`c...` | Go up 3 directories
-`c....` | Go up 4 directories
-`c.....` | Go up 5 directories
-`cg` | Navigate to base of git project
+| Alias    | Description                     |
+| -------- | ------------------------------- |
+| `c~`     | Navigate to ~                   |
+| `c.`     | Go up 1 directory               |
+| `c..`    | Go up 2 directories             |
+| `c...`   | Go up 3 directories             |
+| `c....`  | Go up 4 directories             |
+| `c.....` | Go up 5 directories             |
+| `cg`     | Navigate to base of git project |
 
 ##### Finding files and directories
 
-Alias | Description
----|---
-`dud` | `du -d 1 -h` - List sizes of files within directory
-`duf` | `du -sh *` - List total size of current directory
-`ff` | `find . -type f -name` - Find a file by name within current directory
-`fd` | `find . -type d -name` - Find direcroy by name
+| Alias | Description                                                           |
+| ----- | --------------------------------------------------------------------- |
+| `dud` | `du -d 1 -h` - List sizes of files within directory                   |
+| `duf` | `du -sh *` - List total size of current directory                     |
+| `ff`  | `find . -type f -name` - Find a file by name within current directory |
+| `fd`  | `find . -type d -name` - Find direcroy by name                        |
 
 ##### Command line history
 
-Alias | Description
----|---
-`h` | `history` - Shows full history
-`h-search` | `fc -El 0 \| grep` - Searchses for a word in terminal history
-`top-history` | `history 0 \| awk '{print $2}' \| sort \| uniq -c \| sort -n -r \| head` - Most used
+| Alias         | Description                                                                          |
+| ------------- | ------------------------------------------------------------------------------------ |
+| `h`           | `history` - Shows full history                                                       |
+| `h-search`    | `fc -El 0 \| grep` - Searchses for a word in terminal history                        |
+| `top-history` | `history 0 \| awk '{print $2}' \| sort \| uniq -c \| sort -n -r \| head` - Most used |
 
 ##### Head / tail shortcuts
 
-Alias | Description
----|---
-`H` | `\| head` - Pipes output to head (the first part of a file)
-`T` | `\| tail` - Pipes output to tail (the last part of a file)
-`G` | `\| grep` - Pipes output to grep to search for some word
-`L` | `\| less` - Pipes output to less, useful for paging
-`M` | `\| most` - Pipes output to more, useful for paging
-`LL` | `2>&1 \| less` - Writes stderr to stdout and passes it to less
-`CA` | `2>&1 \| cat -A` - Writes stderr to stdout and passes it to cat
-`NE` | `2> /dev/null` - Silences stderr
-`NUL` | `> /dev/null 2>&1` - Silences both stdout and stderr
-`P` | `2>&1\| pygmentize -l pytb` - Writes stderr to stdout, and passes to pygmentize
+| Alias | Description                                                                     |
+| ----- | ------------------------------------------------------------------------------- |
+| `H`   | `\| head` - Pipes output to head (the first part of a file)                     |
+| `T`   | `\| tail` - Pipes output to tail (the last part of a file)                      |
+| `G`   | `\| grep` - Pipes output to grep to search for some word                        |
+| `L`   | `\| less` - Pipes output to less, useful for paging                             |
+| `M`   | `\| most` - Pipes output to more, useful for paging                             |
+| `LL`  | `2>&1 \| less` - Writes stderr to stdout and passes it to less                  |
+| `CA`  | `2>&1 \| cat -A` - Writes stderr to stdout and passes it to cat                 |
+| `NE`  | `2> /dev/null` - Silences stderr                                                |
+| `NUL` | `> /dev/null 2>&1` - Silences both stdout and stderr                            |
+| `P`   | `2>&1\| pygmentize -l pytb` - Writes stderr to stdout, and passes to pygmentize |
 
 ##### Find + manage aliases
 
-Alias | Description
----|---
-`al` | `alias \| less` - List all aliases
-`as` | `alias \| grep` - Search aliases
-`ar` | `unalias` - Remove given alias
+| Alias | Description                        |
+| ----- | ---------------------------------- |
+| `al`  | `alias \| less` - List all aliases |
+| `as`  | `alias \| grep` - Search aliases   |
+| `ar`  | `unalias` - Remove given alias     |
 
 ##### System Monitoring
 
-Alias | Description
----|---
-`meminfo` | `free -m -l -t` - Show free and used memory
-`memhog` | `ps -eo pid,ppid,cmd,%mem --sort=-%mem \| head` - Processes consuming most mem
-`cpuhog` | `ps -eo pid,ppid,cmd,%cpu --sort=-%cpu \| head` - Processes consuming most cpu
-`cpuinfo` | `lscpu` - Show CPU Info
-`distro` | `cat /etc/*-release` - Show OS info
+| Alias     | Description                                                                    |
+| --------- | ------------------------------------------------------------------------------ |
+| `meminfo` | `free -m -l -t` - Show free and used memory                                    |
+| `memhog`  | `ps -eo pid,ppid,cmd,%mem --sort=-%mem \| head` - Processes consuming most mem |
+| `cpuhog`  | `ps -eo pid,ppid,cmd,%cpu --sort=-%cpu \| head` - Processes consuming most cpu |
+| `cpuinfo` | `lscpu` - Show CPU Info                                                        |
+| `distro`  | `cat /etc/*-release` - Show OS info                                            |
 
 ##### Utilities
 
-Alias | Description
----|---
-`myip` | `curl icanhazip.com` - Fetches and displays public IP
-`weather` | `curl wttr.in` - Fetches and displays local weather
-`weather-short` | `curl "wttr.in?format=3"`
-`cheat` | `curl cheat.sh/` - Gets manual for a Linux command
-`tinyurl` | `curl -s "http://tinyurl.com/api-create.php?url=` - URL shortening
-`ports` | `netstat -tulanp` - List currently used ports
-`crypto` | `cointop` - Launch cointop (only registered if installed)
-`gto` | `gotop` - Launch gotop (only registered if installed)
+| Alias           | Description                                                        |
+| --------------- | ------------------------------------------------------------------ |
+| `myip`          | `curl icanhazip.com` - Fetches and displays public IP              |
+| `weather`       | `curl wttr.in` - Fetches and displays local weather                |
+| `weather-short` | `curl "wttr.in?format=3"`                                          |
+| `cheat`         | `curl cheat.sh/` - Gets manual for a Linux command                 |
+| `tinyurl`       | `curl -s "http://tinyurl.com/api-create.php?url=` - URL shortening |
+| `ports`         | `netstat -tulanp` - List currently used ports                      |
+| `crypto`        | `cointop` - Launch cointop (only registered if installed)          |
+| `gto`           | `gotop` - Launch gotop (only registered if installed)              |
 
 ##### Random lolz
 
-Alias | Description
----|---
-`cls` | `clear;ls` - Clear and ls
-`plz` | `fc -l -1 | cut -d' ' -f2- | xargs sudo` - Re-run last cmd as root
-`yolo` | `git add .; git commit -m "YOLO"; git push origin master` - Why not..
-`when` | `date` - Show date
-`whereami` | `pwd` - Just show current path
-`dog` | `cat` - I don't know why...
-`gtfo` | `exit` - This just feels better than exit
-
+| Alias      | Description                                                         |
+| ---------- | ------------------------------------------------------------------- | -------------- | ------------------------------------- |
+| `cls`      | `clear;ls` - Clear and ls                                           |
+| `plz`      | `fc -l -1                                                           | cut -d' ' -f2- | xargs sudo` - Re-run last cmd as root |
+| `yolo`     | `git add .; git commit -m "YOLO"; git push origin main` - Why not.. |
+| `when`     | `date` - Show date                                                  |
+| `whereami` | `pwd` - Just show current path                                      |
+| `dog`      | `cat` - I don't know why...                                         |
+| `gtfo`     | `exit` - This just feels better than exit                           |
 
 </details>
-
-
 
 ---
 
@@ -704,15 +691,15 @@ Alias | Description
 
 The dotfile installation script can also, detect which system and environemnt you're running, and optionally prompt to update and install listed packages and applications.
 
-Package lists are stored in [`scripts/installs/`](https://github.com/Voorman/dotfiles/tree/master/scripts/installs) directory, with separate files for different OSs. The install script will [pick the appropriate file](https://github.com/Voorman/dotfiles/blob/22c6a04fdb22c140448b7d15ef8187c3a424ab47/install.sh#L243-L260) based on your distro.
+Package lists are stored in [`scripts/installs/`](https://github.com/Voorman/dotfiles/tree/main/scripts/installs) directory, with separate files for different OSs. The install script will [pick the appropriate file](https://github.com/Voorman/dotfiles/blob/22c6a04fdb22c140448b7d15ef8187c3a424ab47/install.sh#L243-L260) based on your distro.
 
 You will be prompted before anything is installed. Be sure to remove / comment out anything you do not need before proceeding.
 
-- Linux (desktop): [`flatpak.sh`](https://github.com/Voorman/dotfiles/blob/master/scripts/installs/flatpak.sh) - Desktop apps can be installed on Linux systems via [Flatpack](https://flatpak.org/)
-- Mac OS: [`Brewfile`](https://github.com/Voorman/dotfiles/blob/master/scripts/installs/Brewfile) - Mac apps installed via [Homebrew](https://brew.sh/)
-- Arch (and Arch-based systems, like Manjaro): [`arch-pacman.sh`](https://github.com/Voorman/dotfiles/blob/master/scripts/installs/arch-pacman.sh) - Arch CLI apps installed via [pacman](https://wiki.archlinux.org/title/Pacman)
-- Debian (and Debian-based systems, like Ubuntu): [`debian-apt.sh`](https://github.com/Voorman/dotfiles/blob/master/scripts/installs/debian-apt.sh) - Debian CLI apps installed via [apt](https://wiki.debian.org/Apt)
-- Alpine: [`aplpine-apk.sh`](https://github.com/Voorman/dotfiles/blob/master/scripts/installs/aplpine-apk.sh) - Alpine CLI apps installed via [apk](https://docs.alpinelinux.org/user-handbook/0.1a/Working/apk.html)
+- Linux (desktop): [`flatpak.sh`](https://github.com/Voorman/dotfiles/blob/main/scripts/installs/flatpak.sh) - Desktop apps can be installed on Linux systems via [Flatpack](https://flatpak.org/)
+- Mac OS: [`Brewfile`](https://github.com/Voorman/dotfiles/blob/main/scripts/installs/Brewfile) - Mac apps installed via [Homebrew](https://brew.sh/)
+- Arch (and Arch-based systems, like Manjaro): [`arch-pacman.sh`](https://github.com/Voorman/dotfiles/blob/main/scripts/installs/arch-pacman.sh) - Arch CLI apps installed via [pacman](https://wiki.archlinux.org/title/Pacman)
+- Debian (and Debian-based systems, like Ubuntu): [`debian-apt.sh`](https://github.com/Voorman/dotfiles/blob/main/scripts/installs/debian-apt.sh) - Debian CLI apps installed via [apt](https://wiki.debian.org/Apt)
+- Alpine: [`aplpine-apk.sh`](https://github.com/Voorman/dotfiles/blob/main/scripts/installs/aplpine-apk.sh) - Alpine CLI apps installed via [apk](https://docs.alpinelinux.org/user-handbook/0.1a/Working/apk.html)
 
 The following section lists apps installed for each category:
 
@@ -763,14 +750,14 @@ The following section lists apps installed for each category:
 <details>
 <summary>CLI Monitoring and Performance Apps</summary>
 
-- [`bandwhich`](https://github.com/imsnif/bandwhich) - Bandwidth utilization monitor 
+- [`bandwhich`](https://github.com/imsnif/bandwhich) - Bandwidth utilization monitor
 - [`ctop`](https://github.com/bcicen/ctop) - Container metrics and monitoring
 - [`bpytop`](https://github.com/aristocratos/bpytop) - Resource monitoring _(like htop)_
 - [`glances`](https://github.com/nicolargo/glances) - Resource monitor + web and API
 - [`gping`](https://github.com/orf/gping) - Interactive ping tool, with graph
 - [`ncdu`](https://dev.yorhel.nl/ncdu) - Disk usage analyzer and monitor _(better du)_
 - [`speedtest-cli`](https://github.com/sivel/speedtest-cli) - Command line speed test utility
-- [`dog`](https://github.com/ogham/dog)  - DNS lookup client _(better dig)_
+- [`dog`](https://github.com/ogham/dog) - DNS lookup client _(better dig)_
 
 </details>
 
@@ -978,12 +965,12 @@ MacOS includes a built-in utility named [`defaults`](https://real-world-systems.
 
 All settings are then updated in the `.plist` files stored in `~/Library/Preferences`. This can also be used to configure preferences for any installed app on your system, where the application is specified by its domain identifier - you can view a full list of your configurable apps by running `defaults domains`.
 
-
 In my dotfiles, the MacOS preferences will configure everything from system security to launchpad layout.
-The Mac settings are located in [`scripts/macos-setup/`](https://github.com/Voorman/dotfiles/tree/master/scripts/macos-setup), and are split into three files:
-- [`macos-security.sh`](https://github.com/Voorman/dotfiles/blob/master/scripts/macos-setup/macos-security.sh) - Sets essential security settings, disables telementry, disconnects unused ports, enforces signing, sets logout timeouts, and much more
-- [`macos-preferences.sh`](https://github.com/Voorman/dotfiles/blob/master/scripts/macos-setup/macos-preferences.sh) - Configures all user preferences, including computer name, highlight color, finder options, spotlight settings, hardware preferences and more
-- [`macos-apps.sh`](https://github.com/Voorman/dotfiles/blob/master/scripts/macos-setup/macos-apps.sh) - Applies preferences to any installed desktop apps, such as Terminal, Time Machine, Photos, Spotify, and many others
+The Mac settings are located in [`scripts/macos-setup/`](https://github.com/Voorman/dotfiles/tree/main/scripts/macos-setup), and are split into three files:
+
+- [`macos-security.sh`](https://github.com/Voorman/dotfiles/blob/main/scripts/macos-setup/macos-security.sh) - Sets essential security settings, disables telementry, disconnects unused ports, enforces signing, sets logout timeouts, and much more
+- [`macos-preferences.sh`](https://github.com/Voorman/dotfiles/blob/main/scripts/macos-setup/macos-preferences.sh) - Configures all user preferences, including computer name, highlight color, finder options, spotlight settings, hardware preferences and more
+- [`macos-apps.sh`](https://github.com/Voorman/dotfiles/blob/main/scripts/macos-setup/macos-apps.sh) - Applies preferences to any installed desktop apps, such as Terminal, Time Machine, Photos, Spotify, and many others
 
 Upon running each script, a summary of what will be changed will be shown, and you'll be prompted as to weather you'd like to continue. Each script also handles permissions, compatibility checking, and graceful fallbacks. Backup of original settings will be made, and a summary of all changes made will be logged as output when the script is complete.
 
@@ -993,19 +980,19 @@ If you choose to run any of these scripts, take care to read it through first, t
 
 ### Config Files
 
-All config files are located in [`./config/`](https://github.com/Voorman/dotfiles/tree/master/config/).
+All config files are located in [`./config/`](https://github.com/Voorman/dotfiles/tree/main/config/).
 
-Configurations for ZSH, Tmux, Vim, and a few others are in dedicated sub-directories (covered in the section below). While all other, small config files are located in the [`./config/general`](https://github.com/Voorman/dotfiles/tree/master/config/general) direcroty, and include:
+Configurations for ZSH, Tmux, Vim, and a few others are in dedicated sub-directories (covered in the section below). While all other, small config files are located in the [`./config/general`](https://github.com/Voorman/dotfiles/tree/main/config/general) direcroty, and include:
 
-- [`.bashrc`](https://github.com/Voorman/dotfiles/blob/master/config/general/.bashrc)
-- [`.curlrc`](https://github.com/Voorman/dotfiles/blob/master/config/general/.curlrc)
-- [`.gemrc`](https://github.com/Voorman/dotfiles/blob/master/config/general/.gemrc)
-- [`.gitconfig`](https://github.com/Voorman/dotfiles/blob/master/config/general/.gitconfig)
-- [`.gitignore_global`](https://github.com/Voorman/dotfiles/blob/master/config/general/.gitignore_global)
-- [`.wgetrc`](https://github.com/Voorman/dotfiles/blob/master/config/general/.wgetrc)
-- [`dnscrypt-proxy.toml`](https://github.com/Voorman/dotfiles/blob/master/config/general/dnscrypt-proxy.toml)
-- [`gpg.conf`](https://github.com/Voorman/dotfiles/blob/master/config/general/gpg.conf)
-- [`starship.toml`](https://github.com/Voorman/dotfiles/blob/master/config/general/starship.toml)
+- [`.bashrc`](https://github.com/Voorman/dotfiles/blob/main/config/general/.bashrc)
+- [`.curlrc`](https://github.com/Voorman/dotfiles/blob/main/config/general/.curlrc)
+- [`.gemrc`](https://github.com/Voorman/dotfiles/blob/main/config/general/.gemrc)
+- [`.gitconfig`](https://github.com/Voorman/dotfiles/blob/main/config/general/.gitconfig)
+- [`.gitignore_global`](https://github.com/Voorman/dotfiles/blob/main/config/general/.gitignore_global)
+- [`.wgetrc`](https://github.com/Voorman/dotfiles/blob/main/config/general/.wgetrc)
+- [`dnscrypt-proxy.toml`](https://github.com/Voorman/dotfiles/blob/main/config/general/dnscrypt-proxy.toml)
+- [`gpg.conf`](https://github.com/Voorman/dotfiles/blob/main/config/general/gpg.conf)
+- [`starship.toml`](https://github.com/Voorman/dotfiles/blob/main/config/general/starship.toml)
 
 ---
 
@@ -1013,17 +1000,17 @@ Configurations for ZSH, Tmux, Vim, and a few others are in dedicated sub-directo
 
 [ZSH](https://www.zsh.org/) (or Z shell) is a UNIX command interpriter (shell), similar to and compatible with Korn shell (KSH). Compared to Bash, it includes many useful features and enchanements, notably in the CLI editor, advanced behaviour customization options, filename globbing, recursive path expansion, completion, and it's easyily extandable through plugins. For more info about ZSH, see the [Introduction to ZSH Docs](https://zsh.sourceforge.io/FAQ/zshfaq01.html).
 
-My ZSH config is located in [`config/zsh/`](https://github.com/Voorman/dotfiles/tree/master/config/zsh)
+My ZSH config is located in [`config/zsh/`](https://github.com/Voorman/dotfiles/tree/main/config/zsh)
 
 ---
 
 ### Vim
 
-The entry point for the Vim config is the [`vimrc`](https://github.com/Voorman/dotfiles/blob/master/config/vim/vimrc), but the main editor settings are defined in [`vim/editor.vim`](https://github.com/Voorman/dotfiles/blob/master/config/vim/editor.vim)
+The entry point for the Vim config is the [`vimrc`](https://github.com/Voorman/dotfiles/blob/main/config/vim/vimrc), but the main editor settings are defined in [`vim/editor.vim`](https://github.com/Voorman/dotfiles/blob/main/config/vim/editor.vim)
 
 #### Vim Plugins
 
-Vim plugins are managed using [Plug](https://github.com/junegunn/vim-plug) defined in [`vim/plugins.vim`](https://github.com/Voorman/dotfiles/blob/master/config/vim/setup-vim-plug.vim).
+Vim plugins are managed using [Plug](https://github.com/junegunn/vim-plug) defined in [`vim/plugins.vim`](https://github.com/Voorman/dotfiles/blob/main/config/vim/setup-vim-plug.vim).
 To install them from GitHub, run `:PlugInstall` (see [options](https://github.com/junegunn/vim-plug#commands)) from within Vim. They will also be installed or updated when you run the main dotfiles setup script ([`install.sh`](https://github.com/Voorman/dotfiles/blob/d4b8426629e7fbbd6d17d0b87f0bb863d6618bfd/install.sh#L132-L134)).
 
 The following plugins are being used:
@@ -1044,7 +1031,6 @@ The following plugins are being used:
 
 </details>
 
-
 <details>
 
 <summary><b>Operations</b></summary>
@@ -1060,7 +1046,6 @@ The following plugins are being used:
 
 </details>
 
-
 <details>
 
 <summary><b>Git</b></summary>
@@ -1068,39 +1053,36 @@ The following plugins are being used:
 - **[Git-Gutter](https://github.com/airblade/vim-gitgutter)**: `airblade/vim-gitgutter` - Shows git diff markers in the gutter column
 - **[Vim-fugitive](https://github.com/tpope/vim-fugitive)**: `tpope/vim-fugitive` - A git wrapper for git that lets you call a git command using `:Git`
 - **[Committia](https://github.com/rhysd/committia.vim)**: `rhysd/committia.vim` - Shows a diff, status and edit window for git commits
-- **[Vim-Git](https://github.com/tpope/vim-git)**: `tpope/vim-git` - Runtime files for git in vim, for  git, gitcommit, gitconfig, gitrebase, and gitsendemail
+- **[Vim-Git](https://github.com/tpope/vim-git)**: `tpope/vim-git` - Runtime files for git in vim, for git, gitcommit, gitconfig, gitrebase, and gitsendemail
 
 </details>
-
 
 <details>
 
 <summary><b>File-Type Plugins</b></summary>
 
-- **[Vim-JavaScript](https://github.com/pangloss/vim-javascript)**: `pangloss/vim-javascript` *(JavaScript)* - Syntax highlighting and improved indentation for JS files
-- **[Yats](https://github.com/HerringtonDarkholme/yats.vim)**: `HerringtonDarkholme/yats.vim` *(TypeScript)* - Syntax highlighting and snippets for TypeScript files
-- **[Vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty)**: `MaxMEllon/vim-jsx-pretty` *(React)* - Highlighting and indentation for React .tsx and .jsx files
-- **[Vim-CSS-Color](https://github.com/ap/vim-css-color)**: `ap/vim-css-color` *(CSS/ SASS)* - Previews colors as text highlight, where hex codes are present
-- **[Mustache and Handlebars](https://github.com/mustache/vim-mustache-handlebars)**: `mustache/vim-mustache-handlebars` *(Mustache/ Handlebars)* - Auto handles braces
-- **[Vim-Go](https://github.com/fatih/vim-go)**: `fatih/vim-go` *(GoLang)* - Go support, with syntax highlighting, quick execute, imports, formatting etc
-- **[Indentpython](https://github.com/vim-scripts/indentpython.vim)**: `vim-scripts/indentpython.vim` *(Python)* - Correct indentation for Python files
-- **[Semshi](https://github.com/numirias/semshi)**: `numirias/semshi` *(Python)* - Advanced syntax highlighting for Python files
-- **[SimpylFold](https://github.com/tmhedberg/SimpylFold)**: `tmhedberg/SimpylFold` *(Python)* - Code-folding for Python
-- **[Vimtex](https://github.com/lervag/vimtex)**: `lervag/vimtex` *(LaTex)* - Completion of citations, labels, commands and glossary entries
-- **[Dockerfile.vim](https://github.com/ekalinin/Dockerfile.vim)**: `ekalinin/Dockerfile.vim` *(Docker)* - Syntax highlighting and snippets for Dockerfiles
-- **[Vim-Json](https://github.com/elzr/vim-json)**: `elzr/vim-json` *(JSON)* - Syntax highlighting, warnings, and quote concealing foe .json files
-- **[Requirements](https://github.com/raimon49/requirements.txt.vim)**: `raimon49/requirements.txt.vim` *(Requirements)* - Syntax highlighting for the requirements file format
-- **[Vim-Markdown](https://github.com/gabrielelana/vim-markdown)**: `gabrielelana/vim-markdown` *(Markdown)* - Syntax highlighting, auto format, easy tables and more
-- **[Zinit](https://github.com/zinit-zsh/zinit-vim-syntax)**: `zinit-zsh/zinit-vim-syntax` *(ZSH)* - syntax definition for Zinit commands in any file of type zsh
-- **[Nginx](https://github.com/chr4/nginx.vim)**:`chr4/nginx.vim` *(Nginx)* - Integer matching, hichlight syntax and IPv4/ IPv6, mark insecure protocols and more
+- **[Vim-JavaScript](https://github.com/pangloss/vim-javascript)**: `pangloss/vim-javascript` _(JavaScript)_ - Syntax highlighting and improved indentation for JS files
+- **[Yats](https://github.com/HerringtonDarkholme/yats.vim)**: `HerringtonDarkholme/yats.vim` _(TypeScript)_ - Syntax highlighting and snippets for TypeScript files
+- **[Vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty)**: `MaxMEllon/vim-jsx-pretty` _(React)_ - Highlighting and indentation for React .tsx and .jsx files
+- **[Vim-CSS-Color](https://github.com/ap/vim-css-color)**: `ap/vim-css-color` _(CSS/ SASS)_ - Previews colors as text highlight, where hex codes are present
+- **[Mustache and Handlebars](https://github.com/mustache/vim-mustache-handlebars)**: `mustache/vim-mustache-handlebars` _(Mustache/ Handlebars)_ - Auto handles braces
+- **[Vim-Go](https://github.com/fatih/vim-go)**: `fatih/vim-go` _(GoLang)_ - Go support, with syntax highlighting, quick execute, imports, formatting etc
+- **[Indentpython](https://github.com/vim-scripts/indentpython.vim)**: `vim-scripts/indentpython.vim` _(Python)_ - Correct indentation for Python files
+- **[Semshi](https://github.com/numirias/semshi)**: `numirias/semshi` _(Python)_ - Advanced syntax highlighting for Python files
+- **[SimpylFold](https://github.com/tmhedberg/SimpylFold)**: `tmhedberg/SimpylFold` _(Python)_ - Code-folding for Python
+- **[Vimtex](https://github.com/lervag/vimtex)**: `lervag/vimtex` _(LaTex)_ - Completion of citations, labels, commands and glossary entries
+- **[Dockerfile.vim](https://github.com/ekalinin/Dockerfile.vim)**: `ekalinin/Dockerfile.vim` _(Docker)_ - Syntax highlighting and snippets for Dockerfiles
+- **[Vim-Json](https://github.com/elzr/vim-json)**: `elzr/vim-json` _(JSON)_ - Syntax highlighting, warnings, and quote concealing foe .json files
+- **[Requirements](https://github.com/raimon49/requirements.txt.vim)**: `raimon49/requirements.txt.vim` _(Requirements)_ - Syntax highlighting for the requirements file format
+- **[Vim-Markdown](https://github.com/gabrielelana/vim-markdown)**: `gabrielelana/vim-markdown` _(Markdown)_ - Syntax highlighting, auto format, easy tables and more
+- **[Zinit](https://github.com/zinit-zsh/zinit-vim-syntax)**: `zinit-zsh/zinit-vim-syntax` _(ZSH)_ - syntax definition for Zinit commands in any file of type zsh
+- **[Nginx](https://github.com/chr4/nginx.vim)**:`chr4/nginx.vim` _(Nginx)_ - Integer matching, hichlight syntax and IPv4/ IPv6, mark insecure protocols and more
 
 </details>
-
 
 <details>
 
 <summary><b>Themes</b></summary>
-
 
 </details>
 
@@ -1108,10 +1090,9 @@ The following plugins are being used:
 
 ### Tmux
 
+Fairly standard Tmux configuration, strongly based off Tmux-sensible. Configuration is defined in [`.tmux.conf`](https://github.com/Voorman/dotfiles/blob/main/config/tmux/tmux.conf)
 
-Fairly standard Tmux configuration, strongly based off Tmux-sensible. Configuration is defined in [`.tmux.conf`](https://github.com/Voorman/dotfiles/blob/master/config/tmux/tmux.conf)
-
-Tmux plugins are managed using [TMP](https://github.com/tmux-plugins/tpm) and defined in [`.tmux.conf`](https://github.com/Voorman/dotfiles/blob/master/config/tmux/tmux.conf). To install them from GitHub, run `prefix` + <kbd>I</kbd> from within Tmux, and they will be cloned int `~/.tmux/plugins/`.
+Tmux plugins are managed using [TMP](https://github.com/tmux-plugins/tpm) and defined in [`.tmux.conf`](https://github.com/Voorman/dotfiles/blob/main/config/tmux/tmux.conf). To install them from GitHub, run `prefix` + <kbd>I</kbd> from within Tmux, and they will be cloned int `~/.tmux/plugins/`.
 
 ##### Plugins
 
@@ -1123,14 +1104,13 @@ Tmux plugins are managed using [TMP](https://github.com/tmux-plugins/tpm) and de
 - [Tmux-open](https://github.com/tmux-plugins/tmux-open): `tmux-plugins/tmux-open` - Bindings for quick opening selected path/ url
 - [Tmux-mem-cpu-load](https://github.com/thewtex/tmux-mem-cpu-load): `thewtex/tmux-mem-cpu-load` - Shows system resources
 
-
 ---
 
 ### Git
 
 // TODO
 
-Git aliases for ZSH are located in [`/zsh/aliases/git.zsh`](https://github.com/Voorman/dotfiles/blob/master/config/zsh/aliases/git.zsh), and are documented under the [Aliases](https://github.com/Voorman/dotfiles#my-aliases) section, above.
+Git aliases for ZSH are located in [`/zsh/aliases/git.zsh`](https://github.com/Voorman/dotfiles/blob/main/config/zsh/aliases/git.zsh), and are documented under the [Aliases](https://github.com/Voorman/dotfiles#my-aliases) section, above.
 
 ---
 
@@ -1145,8 +1125,9 @@ It's strongly recomended to have the following packages installed on your system
 - [git](https://git-scm.com/) - Version control system
 
 They can be easily installed/ updated with your package manger, e.g:
+
 - Ubuntu Server: `sudo apt install -y zsh neovim tmux ranger git`
-- Arch Linux:  `sudo pacman -S zsh neovim tmux ranger git`
+- Arch Linux: `sudo pacman -S zsh neovim tmux ranger git`
 - Alpine: `apk add zsh neovim tmux ranger git`
 - MacOS: `brew install zsh neovim tmux ranger git`
 
@@ -1154,10 +1135,9 @@ They can be easily installed/ updated with your package manger, e.g:
 
 ### Utilities
 
-
 The dotfiles also contains several handy bash scripts to carry out useful tasks with slightly more ease.
 
-Each of these scripts is standalone, without any dependencies, and can be executed directly to use. 
+Each of these scripts is standalone, without any dependencies, and can be executed directly to use.
 Alternatively, they can be sourced from within a .zshrc / .bashrc, for use anywhere via their alias.
 
 For usage instructions about any of them, just append the `--help` flag.
@@ -1170,8 +1150,6 @@ For usage instructions about any of them, just append the `--help` flag.
 - [Welcome]() - Used for first login, prints personalised greeting, system info, and other handy info
 - [Online]() - Checks if you are connected to the internet
 
-
-
 #### Transfer
 
 Quickly transfer a file, group of files or directory via the transfer.sh service.<br>
@@ -1182,7 +1160,7 @@ You can change the file transfer service, or use a self-hosted instance by setti
 The file can be either run directly, or sourced in your `.zshrc` and used via the `transfer` alias.
 
 > For info, run `transfer --help`<br>
-> Source: [`utils/transfer.sh`](https://github.com/Voorman/dotfiles/blob/master/utils/transfer.sh)
+> Source: [`utils/transfer.sh`](https://github.com/Voorman/dotfiles/blob/main/utils/transfer.sh)
 
 #### Web Search
 
@@ -1197,7 +1175,7 @@ All parameters are optional, to get started just run `web-search` or `web-search
   - For example, `web-search Hello World!`
 - `web-search <search engine>` - Specify a search engine, and you'll be prompted for your search term
   - For example, `web-search duckduckgo`
-- `web-search <search engine> <search engine>` - Specify both a search engine and query, and results will open immediately 
+- `web-search <search engine> <search engine>` - Specify both a search engine and query, and results will open immediately
   - For example, `web-search wikipedia Matrix Defense`
 
 <details>
@@ -1205,6 +1183,7 @@ All parameters are optional, to get started just run `web-search` or `web-search
 <summary><b>Supported Search Providers</b></summary>
 
 The following search engines are supported by default:
+
 - DuckDuckGo: `ws duckduckgo` (or `wsddg`)
 - Wikipedia: `ws wikipedia` or (`wswiki`)
 - GitHub: `ws github` (or `wsgh`)
@@ -1217,26 +1196,24 @@ The following search engines are supported by default:
 
 </details>
 
-The alias `ws` will also resolve to `web-search`, if it's not already in use. You can either run the script directly, e.g.`~/.config/utils/web-search.sh` (don't forget to `chmod +x` the file first, to make it executable), or use the `web-search` / `ws` alias anywhere, once it has been source'd from your .zshrc. 
+The alias `ws` will also resolve to `web-search`, if it's not already in use. You can either run the script directly, e.g.`~/.config/utils/web-search.sh` (don't forget to `chmod +x` the file first, to make it executable), or use the `web-search` / `ws` alias anywhere, once it has been source'd from your .zshrc.
 
 > For info, run `web-search --help`<br>
-> Source: [`utils/web-search.sh`](https://github.com/Voorman/dotfiles/blob/master/utils/web-search.sh)
+> Source: [`utils/web-search.sh`](https://github.com/Voorman/dotfiles/blob/main/utils/web-search.sh)
 
 <details>
 
 <summary>Try now!</summary>
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/Voorman/dotfiles/master/utils/web-search.sh)
+bash <(curl -s https://raw.githubusercontent.com/Voorman/dotfiles/main/utils/web-search.sh)
 ```
 
 </details>
 
-
 ---
 
 ---
-
 
 <!-- License + Copyright -->
 <p  align="center">
@@ -1246,7 +1223,7 @@ bash <(curl -s https://raw.githubusercontent.com/Voorman/dotfiles/master/utils/w
 </p>
 
 <!-- Dinosaur -->
-<!-- 
+<!--
                         . - ~ ~ ~ - .
       ..     _      .-~               ~-.
      //|     \ `..~                      `.
@@ -1258,4 +1235,3 @@ bash <(curl -s https://raw.githubusercontent.com/Voorman/dotfiles/master/utils/w
               |     /          |     /     ~-.     ~- _
               |_____|          |_____|         ~ - . _ _~_-_
 -->
-

@@ -15,7 +15,7 @@ cask_args appdir: '~/Applications', require_sha: true
 
 # Taps
 tap 'homebrew/bundle'
-tap 'homebrew/core'
+# tap 'homebrew/core'
 tap 'homebrew/services'
 tap 'blacktop/tap'
 tap 'browsh-org/homebrew-browsh'
@@ -46,7 +46,7 @@ brew 'ctags'        # Indexing of file info + headers
 brew 'diff-so-fancy'# Readable file compares (better diff)
 brew 'duf'          # Get info on mounted disks (better df)
 brew 'entr'         # Run command whenever file changes
-brew 'exa'          # Listing files with info (better ls)
+# brew 'exa'          # Listing files with info (better ls)
 brew 'exiftool'     # Read, write and modify exif data
 brew 'fzf'          # Fuzzy file finder and filtering
 brew 'hyperfine'    # Benchmarking for arbitrary commands
@@ -70,7 +70,7 @@ brew 'zoxide'       # Auto-learning navigation (better cd)
 # CLI Monitoring and Performance Apps
 brew 'bmon'         # Bandwidth utilization monitor 
 brew 'ctop'         # Container metrics and monitoring
-brew 'dog'          # DNS lookup client (better dig)
+# brew 'dog'          # DNS lookup client (better dig)
 brew 'bpytop'       # Resource monitoring (like htop)
 brew 'dua-cli'      # Disk usage analyzer and monitor (better du)
 brew 'glances'      # Resource monitor + web and API
@@ -192,7 +192,7 @@ brew 'youtube-dl'   # YouTube video downloader
 
 # Personal Applications
 cask '1password'      # Password manager (proprietary)
-cask 'tresorit'       # Encrypted file backup (proprietary)
+cask 'tresorit' , args: { require_sha: false }  # Encrypted file backup (proprietary)
 cask 'standard-notes' # Encrypted synced notes
 # cask 'signal'         # Link to encrypted mobile messenger
 # cask 'ledger-live'    # Crypto hardware wallet manager
@@ -203,7 +203,7 @@ cask 'standard-notes' # Encrypted synced notes
 
 # Browsers
 cask 'firefox'
-cask 'chromium'
+cask 'chromium'  , args: { require_sha: false } 
 cask 'orion'
 cask 'arc'
 
@@ -212,10 +212,10 @@ cask 'arc'
 #############################################################
 
 # Fonts
-tap 'homebrew/cask-fonts'
+# tap 'homebrew/cask-fonts'
 cask 'font-fira-code'
 cask 'font-hack'
-cask 'font-inconsolata'
+cask 'font-inconsolata' , args: { require_sha: false } 
 cask 'font-meslo-lg-nerd-font'
 
 # Mac OS Quick-Look Plugins

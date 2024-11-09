@@ -63,12 +63,7 @@ apps:
         - 1Password
         - VeraCrypt
         - Tresorit
-        - Proton Mail Bridge
-        - ProtonVPN
         - GPG Keychain
-        - Signal
-        - Ledger Live
-        - etesync-dav
     - folder: Mac Mods
       pages:
       - number: 1
@@ -130,8 +125,6 @@ apps:
         - TestFlight
         - Developer
         - Dictionary
-        - VMware Fusion Tech Preview
-        - Jabra Direct
         - CotEditor
       - number: 2
         items:
@@ -168,28 +161,7 @@ apps:
         - Safari
         - Home
         - App Store
-    - folder: Corporate Spyware
-      pages:
-      - number: 1
-        items:
-        - Netskope Client
-        - Self Service
-        - Solarwinds Discovery Agent
-        - Kandji Extension Manager
-        - Sophos Endpoint
-        - Sophos Network Extension
-        - Sophos Scan
-        - Remove Sophos Endpoint
-        - Remove Netskope Client
-        - Sophos Endpoint Self Help
-    - folder: Voldermort
-      pages:
-      - number: 1
-        items:
-        - Google Sheets
-        - Google Slides
-        - Google Docs
-        - Google Drive
+    - Arc  
     - Firefox
     - Chromium
     - Visual Studio Code

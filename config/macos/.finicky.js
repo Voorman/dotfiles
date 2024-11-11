@@ -2,7 +2,7 @@
 // Specifies which browser to open based on the URL
 // Docs: https://github.com/johnste/finicky
 module.exports = {
-  defaultBrowser: "Firefox",
+  defaultBrowser: "arc",
   rewrite: [
     { // Redirect all urls to use https
       match: ({ url }) => url.protocol === "http",
@@ -16,14 +16,9 @@ module.exports = {
       browser: "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome",
       match: [
         "*.google.com/*",
-        "*and-digital.okta.com/*",
-        "*and-digital.zoom.us/*",
         "*atlassian.com/*",
         "*dev.azure.com/*",
         "*docs.google.com/*",
-        "*luna.and-digital.com/*",
-        "*miro.com/*",
-        "*zoom.com/*",
         "*.atlassian.net/*"
       ],
     },

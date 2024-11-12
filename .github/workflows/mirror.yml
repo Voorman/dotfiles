@@ -1,16 +1,51 @@
 # Pushes the contents of the repo to the Codeberg mirror
 name: 🪞 Mirror to Codeberg
+
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * 0' # At 02:00 on Sunday
+    - cron: '0 2 * * 0'  # At 02:00 on Sunday
+  push:  # Added to ensure mirrors are up to date after pushes
+    branches:
+      - main
+      - master
+
 jobs:
   codeberg:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with: { fetch-depth: 0 }
-      - uses: pixta-dev/repository-mirroring-action@v1
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Updated to v4
+        with:
+          fetch-depth: 0
+          lfs: true  # Enable Git LFS
+
+      - name: Install and setup Git LFS
+        run: |
+          git lfs install
+          git lfs pull
+          git config lfs.allowincompletepush true
+
+      - name: Mirror to Codeberg
+        uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url: git@codeberg.org:frontman/dotfiles.git
           ssh_private_key: ${{ secrets.CODEBERG_SSH }}
+
+      - name: Push LFS objects
+        if: success()  # Only run if mirroring succeeded
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.CODEBERG_SSH }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          cat >> ~/.ssh/config <<EOF
+          Host codeberg.org
+            HostName codeberg.org
+            User git
+            IdentityFile ~/.ssh/id_ed25519
+            IdentitiesOnly yes
+          EOF
+          git remote add codeberg git@codeberg.org:frontman/dotfiles.git
+          git lfs push --all codeberg

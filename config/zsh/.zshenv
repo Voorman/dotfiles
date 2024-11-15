@@ -12,7 +12,7 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 # Set default applications
 export EDITOR="vim"
 export TERMINAL="konsole"
-export BROWSER="firefox"
+export BROWSER="arc"
 export PAGER="less"
 
 ## Respect XDG directories

@@ -144,7 +144,7 @@ brew 'docker'         # Containers
 # Development Utils
 brew 'gh'             # Interact with GitHub PRs, issues, repos
 brew 'git-extras'     # Extra git commands for common tasks
-brew 'scrcpy'         # Display and control Android devices
+# brew 'scrcpy'         # Display and control Android devices
 brew 'terminal-notifier' # Trigger Mac notifications from terminal
 brew 'tig'            # Text-mode interface for git
 brew 'ttygif'         # Generate GIF from terminal commands + output
@@ -154,7 +154,7 @@ brew 'watchman'       # Watch for changes and reload dev server
 brew 'bettercap'      # Network, scanning and monitoring
 brew 'nmap'           # Port scanning
 brew 'wrk'            # HTTP benchmarking
-cask 'burp-suite'     # Web security testing
+# cask 'burp-suite'     # Web security testing
 cask 'owasp-zap'      # Web app security scanner
 cask 'wireshark'      # Network analyzer + packet capture
 
@@ -202,7 +202,7 @@ cask 'standard-notes' # Encrypted synced notes
 # cask 'vorta'          # GUI for BorgBackup
 
 # Browsers
-cask 'firefox'
+# cask 'firefox'
 cask 'chromium'  , args: { require_sha: false } 
 cask 'orion'
 cask 'arc'
@@ -233,7 +233,7 @@ cask 'webpquicklook',  args: { require_sha: false } # QL for WebP image files
 # Mac OS Mods and Imrovments
 cask 'alt-tab'        # Much better alt-tab window switcher
 cask 'anybar'         # Custom programmatic menubar icons
-cask 'copyq'          # Clipboard manager (cross platform)
+# cask 'copyq'          # Clipboard manager (cross platform)
 cask 'espanso'        # Live text expander (cross-platform)
 cask 'finicky'        # Website-specific default browser
 cask 'hiddenbar'      # Hide / show annoying menubar icons
@@ -256,13 +256,13 @@ cask 'little-snitch'  # Firewall app viewing / blocking traffic
 
 # Personal Productivity
 brew 'atuin'        # Auto-suggestions for commands
-brew 'topgrade'       # Upgrade all the things
+brew 'topgrade'     # Upgrade all the things
 brew 'mosh'         # Mobile shell for roaming
 cask 'warp'         # Terminal
 brew 'aws-cdk'      # AWS Cloud Development Kit
 brew 'awscli'       # AWS Command Line Interface
 cask 'sonos'        # Sonos controller
-brew 'orbstack'     # docker desktop mac
+# brew 'orbstack'     # docker desktop mac
 cask 'maestral'     # Dropbock client mac
 brew 'mas'          # Mac App Store CLI
 
@@ -286,5 +286,4 @@ mas 'Magnet', id: 441258766
 # mas 'Spark', id: 1176895641 #classic
 mas 'Spark Mail', id: 6445813049
 mas 'Whatsapp Desktop', id: 1147396723
-mas 'Ditto', id: 6497066279
 # EOF

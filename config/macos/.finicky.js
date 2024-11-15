@@ -22,6 +22,10 @@ module.exports = {
         "*.atlassian.net/*"
       ],
     },
+    { // Open coding stuff in Arc
+      browser: "/Applications/Arc.app",
+      match: [],
+    },    
     { // Open coding stuff in Firefox
       browser: "/Applications/Firefox.app",
       match: [],

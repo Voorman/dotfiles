@@ -433,7 +433,7 @@ if hash dockutil 2> /dev/null; then
     'Reminders' 'TV'
   )
   apps_to_add_to_dock=(
-    'iTerm' 'Firefox' 'Standard Notes' 'Visual Studio Code'
+    'iTerm' 'Arc' 'Standard Notes' 'Visual Studio Code'
   )
   IFS=""
   # Removes useless apps from dock

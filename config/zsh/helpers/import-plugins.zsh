@@ -26,6 +26,3 @@ antigen bundle colorize
 
 # Tell antigen that you're done
 antigen apply
-
-# Atuin for shell history
-antigen bundle atuinsh/atuin@main

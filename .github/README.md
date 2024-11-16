@@ -581,11 +581,11 @@ These short-hand aliases and helper functions speed up running common commands a
 | `lf`   | `ls -A \| grep` - Use grep to find files                                                                              |
 | `ln`   | `find . -type f \| wc -l` - Shows number of files                                                                     |
 | `ld`   | `ls -l \| grep "^d"` - List directories only                                                                          |
-| `la`   | `exa -aF --icons` - List all files, including hidden (only if `exa` is installed)                                     |
-| `ll`   | `exa -laF --icons` - Show files with all details (only if `exa` is installed)                                         |
-| `lm`   | `exa -lahr --color-scale --icons -s=modified` - Sort by date modified, most revent first (only if `exa` is installed) |
-| `lb`   | `exa -lahr --color-scale --icons -s=size` - Sort by size largest first (only if `exa` is installed)                   |
-| `tree` | `f() { exa -aF --tree -L=${1:-2} --icons };f` - List files as tree (only if `exa` is installed)                       |
+| `la`   | `eza -aF --icons` - List all files, including hidden (only if `eza` is installed)                                     |
+| `ll`   | `eza -laF --icons` - Show files with all details (only if `eza` is installed)                                         |
+| `lm`   | `eza -lahr --color-scale --icons -s=modified` - Sort by date modified, most revent first (only if `eza` is installed) |
+| `lb`   | `eza -lahr --color-scale --icons -s=size` - Sort by size largest first (only if `eza` is installed)                   |
+| `tree` | `f() { eza -aF --tree -L=${1:-2} --icons };f` - List files as tree (only if `eza` is installed)                       |
 | `lz`   | List the contents of a specified compressed archive. Supported formats include zip, rar, tar, tar.gz and ace          |
 
 ##### Getting Around
@@ -724,7 +724,7 @@ The following section lists apps installed for each category:
 - [`diff-so-fancy`](https://github.com/so-fancy/diff-so-fancy) - Readable file compares _(better diff)_
 - [`entr`](https://eradman.com/entrproject/) - Run command whenever file changes
 - [`duf`](https://github.com/muesli/duf) - Get info on mounted disks _(better df)_
-- [`exa`](https://github.com/ogham/exa) - Listing files with info _(better ls)_
+- [`eza`](https://github.com/eza-community/eza) - Listing files with info _(better ls)_
 - [`exiftool`](https://exiftool.org/) - Reading and writing exif metadata
 - [`fdupes`](https://github.com/jbruchon/jdupes) - Duplicate file finder
 - [`fzf`](https://github.com/junegunn/fzf) - Fuzzy file finder and filtering

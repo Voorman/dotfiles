@@ -25,13 +25,12 @@ tap 'koekeishiya/formulae'
 tap 'kdash-rs/kdash'
 
 tap 'aws/tap'
-tap 'ellie/atuin'
+# tap 'ellie/atuin'
 tap 'microsoft/git'
 
 #############################################################
 # Command Line                                              #
-#############################################################
-
+############################################################
 # CLI Essentials
 brew 'git'          # Version controll
 brew 'neovim'       # Text editor
@@ -46,7 +45,8 @@ brew 'ctags'        # Indexing of file info + headers
 brew 'diff-so-fancy'# Readable file compares (better diff)
 brew 'duf'          # Get info on mounted disks (better df)
 brew 'entr'         # Run command whenever file changes
-# brew 'exa'          # Listing files with info (better ls)
+# brew 'exa'          # Listing files with info (better ls) Depriciated 
+brew 'eza'          # better ls
 brew 'exiftool'     # Read, write and modify exif data
 brew 'fzf'          # Fuzzy file finder and filtering
 brew 'hyperfine'    # Benchmarking for arbitrary commands
@@ -255,7 +255,7 @@ cask 'little-snitch'  # Firewall app viewing / blocking traffic
 # cask 'keka'           # File archiver and extractor
 
 # Personal Productivity
-brew 'atuin'        # Auto-suggestions for commands
+# brew 'atuin'        # Auto-suggestions for commands
 brew 'topgrade'     # Upgrade all the things
 brew 'mosh'         # Mobile shell for roaming
 cask 'warp'         # Terminal

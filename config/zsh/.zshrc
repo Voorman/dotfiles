@@ -59,9 +59,6 @@ if [ "$(uname -s)" = "Darwin" ]; then
   fi
 fi
 
-# Import Atuin history
-eval "$(atuin init zsh)"
-
 # Source all ZSH config files (if present)
 if [[ -d $zsh_dir ]]; then
   # Import alias files

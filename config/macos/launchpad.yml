@@ -1,172 +1,179 @@
-######################################################################
-# MacOS Launchpad Layout (Voorman/Dotfiles)                          #
-######################################################################
-# Folder structure and layout for organising the MacOS launchpad     #
-# Managed with lporg (brew install lporg)                            # 
-# To regenerate this file from current layout, run `lporg save`      #
-# To apply changes, run `lporg load ~/.config/launchpad.yml`         #
-#                                                                    #
-######################################################################
-
 apps:
   pages:
-  - number: 1
-    items:
-    - folder: Dev
-      pages:
-      - number: 1
-        items:
-        - Xcode
-        - Docker
-        - Postman
-        - Boop
-        - Sourcetree
-        - UTM
-        - Visual Studio
-        - React Native Debugger
-        - MacDown
-    - folder: Work Coms
-      pages:
-      - number: 1
-        items:
-        - zoom.us
-        - Slack
-        - Google Chrome
-        - Calendar
+    - number: 1
+      items:
+        - App Store
+        - Safari
         - Mail
-        - Microsoft Teams
-    - folder: Security
-      pages:
-      - number: 1
-        items:
-        - Wireshark
-        - OWASP ZAP
-        - Burp Suite Community Edition
-    - folder: Media
-      pages:
-      - number: 1
-        items:
-        - GIMP-2.10
-        - VLC
-        - Transmission
-        - Audacity
-        - OBS
-        - Spotify
-        - Inkscape
-        - Shotcut
-        - calibre
-    - folder: Personal
-      pages:
-      - number: 1
-        items:
-        - Standard Notes
-        - 1Password
-        - VeraCrypt
-        - Tresorit
-        - GPG Keychain
-    - folder: Mac Mods
-      pages:
-      - number: 1
-        items:
-        - Raycast
-        - Stats
-        - Hidden Bar
-        - AltTab
-        - OpenInTerminal
-        - Scroll Reverser
-        - amm
-        - Espanso
-        - Little Snitch
-        - AnyBar
-        - Shottr
-        - Finicky
-        - OnyX
-        - CopyQ
-        - PopClip
-        - Mjolnir
-        - LinearMouse
-        - Übersicht
-        - MacForge
-        - QLMarkdown
-        - Santa
-        - Suspicious Package
-    - folder: Other
-      pages:
-      - number: 1
-        items:
-        - Shortcuts
-        - QuickTime Player
-        - TextEdit
-        - Grapher
-        - Time Machine
-        - Font Book
-        - Chess
-        - Stickies
-        - Image Capture
-        - VoiceOver Utility
-        - AirPort Utility
-        - Migration Assistant
-        - Terminal
-        - Activity Monitor
-        - Console
-        - Keychain Access
-        - System Information
-        - Automator
-        - Script Editor
-        - Disk Utility
-        - Digital Color Meter
-        - ColorSync Utility
-        - Screenshot
-        - Bluetooth File Exchange
-        - Audio MIDI Setup
-        - Calculator
-        - System Preferences
-        - Simulator
-        - TestFlight
-        - Developer
-        - Dictionary
-        - CotEditor
-      - number: 2
-        items:
-        - Orion
-        - Keka
-        - Mountain Duck
-        - DaisyDisk
-    - folder: Apple Crap
-      pages:
-      - number: 1
-        items:
         - Contacts
+        - Calendar
         - Reminders
-        - Photos
-        - Numbers
-        - Pages
-        - Keynote
-        - Photo Booth
         - Notes
         - FaceTime
         - Messages
         - Maps
         - Find My
+        - Photos
         - Music
         - Podcasts
-        - Books
-        - Preview
         - TV
-        - Voice Memos
-        - News
-        - Stocks
-        - Siri
-        - Mission Control
-        - Safari
+        - GarageBand
+        - iMovie
+        - Keynote
+        - Numbers
+        - Pages
+        - Clock
+        - Calculator
         - Home
-        - App Store
-    - Arc  
-    - Firefox
-    - Chromium
-    - Visual Studio Code
-    - iTerm
+        - Siri
+        - iPhone Mirroring
+        - Passwords
+        - System Settings
+        - folder: Other
+          pages:
+            - number: 1
+              items:
+                - Shortcuts
+                - QuickTime Player
+                - Dictionary
+                - TextEdit
+                - Font Book
+                - Screen Sharing
+                - Mission Control
+                - Time Machine
+                - Preview
+                - Screenshot
+                - Image Capture
+                - Digital Color Meter
+                - ColorSync Utility
+                - Stickies
+                - Grapher
+                - VoiceOver Utility
+                - Print Center
+                - Automator
+                - Script Editor
+                - Audio MIDI Setup
+                - Bluetooth File Exchange
+                - Disk Utility
+                - System Information
+                - Activity Monitor
+                - Console
+                - Terminal
+                - AirPort Utility
+                - Migration Assistant
+                - LogiPluginService
+                - Freeform
+                - Books
+                - Stocks
+                - Voice Memos
+                - Photo Booth
+        - folder: Games
+          pages:
+            - number: 1
+              items:
+                - Chess
+        - Weather
+        - Grammarly Desktop
+    - number: 2
+      items:
+        - Tips
+        - Logi Options+
+        - Boop
+        - iTerm
+        - Postman
+        - Sourcetree
+        - Visual Studio Code
+        - Burp Suite Community Edition
+        - ZAP
+        - Wireshark
+        - GPG Keychain
+        - VeraCrypt
+        - Audacity
+        - GIMP
+        - Inkscape
+        - OBS
+        - Shotcut
+        - calibre
+        - Spotify
+        - Transmission
+        - VLC
+        - 1Password
+        - Standard Notes
+        - Orion
+        - Arc
+        - QLMarkdown
+        - QuickLook Video
+        - AltTab
+        - AnyBar
+        - Espanso
+        - Finicky
+        - Hidden Bar
+        - Mjolnir
+        - Simulator
+    - number: 3
+      items:
+        - OpenInTerminal
+        - Raycast
+        - Santa
+        - Shottr
+        - Stats
+        - CotEditor
+        - Little Snitch
+        - Warp
+        - Sonos
+        - 1Password for Safari
+        - Final Cut Pro
+        - LanScan
+        - Microsoft Excel
+        - Microsoft OneNote
+        - Microsoft PowerPoint
+        - Microsoft Word
+        - NordVPN
+        - OneDrive
+        - Slack
+        - Speediness
+        - Tailscale
+        - Trello
+        - Xcode
+        - Magnet
+        - Spark Desktop
+        - Tresorit
+        - Microsoft Teams
+        - OrbStack
+        - Maestral
+        - Chromium
+        - Claude
 widgets:
   pages: []
 dock_items:
+  apps:
+    - /Users/ivarvoorman/Applications/iTerm.app
+    - /System/Applications/Launchpad.app
+    - /Users/ivarvoorman/Applications/Arc.app
+    - /Users/ivarvoorman/Applications/Visual Studio Code.app
+    - /Applications/Spark Desktop.app
+    - /System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app
+    - /Users/ivarvoorman/Applications/Warp.app
+    - /System/Applications/Maps.app
+    - /System/Applications/Photos.app
+    - /System/Applications/Calendar.app
+    - /System/Applications/Reminders.app
+    - /System/Applications/Notes.app
+    - /System/Applications/App Store.app
+    - /System/Applications/System Settings.app
+    - /Users/ivarvoorman/Applications/Sourcetree.app
+    - /Users/ivarvoorman/Applications/Spotify.app
+    - /Applications/Claude.app
+  others:
+    - path: ~/Downloads
+      view: 1
+      sort: 2
+  settings:
+    autohide: true
+    largesize: 56
+    magnification: true
+    minimize-to-application: true
+    mru-spaces: false
+    show-recents: false
+    tilesize: 41
 desktop: {}

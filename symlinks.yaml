@@ -30,7 +30,7 @@
     ${XDG_CONFIG_HOME}/wget/.wgetrc: config/general/.wgetrc
 
     # Desktop Apps
-    # ${XDG_CONFIG_HOME}/alacritty.yml: config/desktop-apps/alacritty.yml
+    ${XDG_CONFIG_HOME}/macos/launchpad.yml: config/macos/launchpad.yml
 
     # Bash utils
     ${XDG_CONFIG_HOME}/utils: utils

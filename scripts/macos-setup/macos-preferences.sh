@@ -423,6 +423,22 @@ defaults write com.apple.dock showhidden -bool true
 log_msg "Hide recent files from the dock"
 defaults write com.apple.dock show-recents -bool false
 
+# check if dockutil is installed, install if it's not.
+dockutil="/usr/local/bin/dockutil"
+if [[ -x $dockutil ]]; then
+    echo "dockutil found, no need to install"
+else
+    echo "dockutil could not be found, installing..."
+    curl -L --silent --output /tmp/dockutil.pkg "https://github.com/kcrawford/dockutil/releases/download/3.0.2/dockutil-3.0.2.pkg" >/dev/null
+    # install dockutil
+    installer -pkg "/tmp/dockutil.pkg" -target /
+fi
+# vars to use script and set current logged in user dock
+killall="/usr/bin/killall"
+loggedInUser=$( ls -l /dev/console | awk '{print $3}' )
+LoggedInUserHome="/Users/$loggedInUser"
+UserPlist=$LoggedInUserHome/Library/Preferences/com.apple.dock.plist
+
 # If DockUtil installed, then use it to remove default dock items, and add useful ones
 if hash dockutil 2> /dev/null; then
   apps_to_remove_from_dock=(

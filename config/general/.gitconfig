@@ -284,3 +284,5 @@
 	caskanalyticsmessage = true
 [lfs "https://github.com/Homebrew/brew.git/info/lfs"]
 	access = basic
+[interactive]
+	diffFilter = delta --color-only

@@ -8,7 +8,7 @@ git submodule add ${BASEDIR} dotbot
 cp ./dotbot/tools/git-submodule/install .
 echo "pear" > ${DOTFILES}/foo
 '
-
+p
 test_expect_success 'run' '
 cat > ${DOTFILES}/install.conf.yaml <<EOF
 - link:

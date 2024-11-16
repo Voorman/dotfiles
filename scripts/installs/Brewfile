@@ -264,6 +264,8 @@ brew 'awscli'       # AWS Command Line Interface
 cask 'sonos'        # Sonos controller
 # brew 'orbstack'     # docker desktop mac
 cask 'maestral'     # Dropbock client mac
+# cask 'amazon-q'     # Amazon Q client
+cask 'microsoft-teams' # Teams client
 brew 'mas'          # Mac App Store CLI
 
 # Mac OS Apps from the App Store

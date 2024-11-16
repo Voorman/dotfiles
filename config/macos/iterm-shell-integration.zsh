@@ -1,6 +1,3 @@
-# Downloaded from:
-# https://raw.githubusercontent.com/gnachman/iTerm2/v3.4.17/Resources/shell_integration/iterm2_shell_integration.zsh
-
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
 # as published by the Free Software Foundation; either version 2
@@ -179,3 +176,4 @@ if [[ -o interactive ]]; then
     printf "\033]1337;ShellIntegrationVersion=14;shell=zsh\007"
   fi
 fi
+alias imgcat=${ZDOTDIR}/.iterm2/imgcat;alias imgls=${ZDOTDIR}/.iterm2/imgls;alias it2api=${ZDOTDIR}/.iterm2/it2api;alias it2attention=${ZDOTDIR}/.iterm2/it2attention;alias it2check=${ZDOTDIR}/.iterm2/it2check;alias it2copy=${ZDOTDIR}/.iterm2/it2copy;alias it2dl=${ZDOTDIR}/.iterm2/it2dl;alias it2getvar=${ZDOTDIR}/.iterm2/it2getvar;alias it2git=${ZDOTDIR}/.iterm2/it2git;alias it2setcolor=${ZDOTDIR}/.iterm2/it2setcolor;alias it2setkeylabel=${ZDOTDIR}/.iterm2/it2setkeylabel;alias it2tip=${ZDOTDIR}/.iterm2/it2tip;alias it2ul=${ZDOTDIR}/.iterm2/it2ul;alias it2universion=${ZDOTDIR}/.iterm2/it2universion;alias it2profile=${ZDOTDIR}/.iterm2/it2profile;alias it2cat=${ZDOTDIR}/.iterm2/it2cat
